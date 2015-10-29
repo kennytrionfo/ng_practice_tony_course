@@ -1,0 +1,11 @@
+steps for tony course
+
+Create a basic html index page or something. 
+
+Create a js file and assign one object the angular module and pass in the name of ur app. 
+	
+Tell angular what part of the view is going to be controlled by the app. 
+	Put the angular app directive somewhere in ur html:
+	Like:
+	<html ng-app="myApp">
+
