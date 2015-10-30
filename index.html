@@ -17,6 +17,7 @@
         <!-- load angular via CDN (actually loading from the directory. I downloaded. -Kenny) -->
         <script src="angular.min.js"></script>
         <script src="app.js"></script>
+        <script type="text/javascript" src="https://code.angularjs.org/1.4.7/angular-resource.min.js"></script>
     </head>
     <body>
 
@@ -39,7 +40,10 @@
 			<div ng-controller="mainController">
                 
                 <h1>Hello world!</h1>
-                
+                <input type="text" ng-model="message"/>
+                <button ng-click="$log.log(message)">log</button>
+                <button ng-click="$log.error(message)">error</button>
+
             </div>
 
 		</div>
