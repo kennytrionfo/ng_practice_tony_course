@@ -7,14 +7,14 @@ $(document).ready(function() {
 
 	$("#btnStep1").click(function() {
 		$("#step1").show();
-		$("#step2").show();
+		$("#step2").hide();
 
-		// currentStep = 1;
+		currentStep = 1;
 	});
 
 	$("#btnStep2").click(function() {
 		$("#step1").hide();
 		$("#step2").show();
-		// currentStep = 2;
+		currentStep = 2;
 	});
 });
