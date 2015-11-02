@@ -1,12 +1,10 @@
 $(document).ready(function() {
 
 	var currentStep = 0;
-	console.log("face of butts" );
 	$("#step1").hide();
 	$("#step2").hide();
 
 	$("#btnStep1").click(function() {
-		console.log("buttface" );
 		$("#step1").show();
 		$("#step2").hide();
 
