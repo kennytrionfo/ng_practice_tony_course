@@ -1,8 +1,6 @@
 // MODULE
 var angularApp = angular.module('angularApp', ['ngResource']);
-
-var tb = document.getElementById("name");
-console.log("this should be tb " + tb ); 
+ 
 // CONTROLLERS
 angularApp.controller('mainController', ['$scope', '$log', '$resource', '$timeout', '$filter',  function ($scope, $log, $resource, $timeout, $filter) {
 	console.log($resource );

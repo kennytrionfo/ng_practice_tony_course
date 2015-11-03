@@ -99,25 +99,38 @@ Create an html page with the UTF-8 charset metatag, a link element linking to ur
 Put in a Navbar:
 	<header>
 		<nav class="navbar navbar-default">
-		  <div class="container">
-		    <div class="navbar-header">
-		      <a class="navbar-brand" href="#">Twitter example</a>
-		    </div>
-		    <div>
-		      <ul class="nav navbar-nav navbar-right">
-		        <li class="active"><a href="#">Home</a></li>
-		        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-		          <ul class="dropdown-menu">
-		            <li><a href="#">Page 1-1</a></li>
-		            <li><a href="#">Page 1-2</a></li>
-		          </ul>
-		        </li>
-		        <li><a href="#">Page 2</a></li>
-		      </ul>
-		    </div>
-		  </div>
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">twittister</a>
+				</div>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">The WHY</a></li>
+					<li><a href="#">2nd Menu</a></li>
+					<li><a href="#">3rd Menu</a></li>
+				</ul>
+			</div>
 		</nav>
 	</header>
 
+Put in a container div with another div in it and in it a label to enter a new twittister handle and a textbox and then below it text that outputs what their new twittister handle is: 
+  <div class="container">
+    <div >
+      <label>What do you want ur twittister handle to be?</label>
+      <input type="text" />
+      <h2>Your twittister handle is: </h2>
+      <h2>twittister.com/ </h2>
+    </div>
+  </div>	
 
 
+add the angular directive to ur html element
+
+add a a controller directive to a div
+
+add a model directive to a text box
+
+create a controller in the angular module
+
+create a model in the angular stuff to connect with the model in the view
+
+create a scope? 
