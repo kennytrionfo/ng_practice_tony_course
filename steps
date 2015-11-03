@@ -81,3 +81,19 @@ Create a div in ur html with a controller as the attribute. Give it the name of 
 
 
 
+<!-- /////////////////////////========Twitter Project=======\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+
+Create an html page with the UTF-8 charset metatag, a link element linking to ur minified bootstrap file or the CDN link and ur script elements to either a minified local file or a CDN link to anguar, jquery and ur js files in ur head element. 
+	<head>
+		<title>Twitter</title>
+		<meta charset="UTF-8">
+
+		<!-- load bootstrap and fontawesome via CDN (actually loading form the current directory. I downlaoded it. -) -->
+		<link rel="stylesheet" href="bootstrap.min.css" />
+
+		<!-- load angular via CDN (actually loading from the directory. I downloaded. -Kenny) -->
+		<script src="angular.min.js"></script>
+		<script src="twitter.js"></script>
+	</head>
+
+	

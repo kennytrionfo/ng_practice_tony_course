@@ -7,12 +7,6 @@
 
         <!-- load bootstrap and fontawesome via CDN (actually loading form the current directory. I downlaoded it. -) -->
         <link rel="stylesheet" href="bootstrap.min.css" />
-        <style>
-            html, body
-            {
-                font-size: 1.1em;
-            }
-        </style>
         
         <!-- load angular via CDN (actually loading from the directory. I downloaded. -Kenny) -->
         <script src="angular.min.js"></script>
@@ -52,11 +46,12 @@
                 <input type="text" ng-model="message"/>
                 <button ng-click="$log.log(message)">log</button>
                 <button ng-click="$log.error(message)">error</button>
+                <h1>Hello {{name + '. How are you?'}}</h1>
             </div>
-		</div>
+        </div>
+<!-- /////////////////////////========Twitter Hander=======\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
         <div class="container">
             <div ng-controller="mainController" >
-                <h1>Hello {{name + '. How are you?'}}</h1>
                 <div  >
                     <label>What's ur twitter handle?</label>
                     <input type="text" ng-model="handle" />
