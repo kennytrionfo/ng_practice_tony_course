@@ -112,9 +112,10 @@ Put in a Navbar:
 		</nav>
 	</header>
 
-Put in a container div with another div in it and in it a label to enter a new twittister handle and a textbox and then below it text that outputs what their new twittister handle is: 
+Put in a container div with another div in it and in it a Hello Twittister and then a label to enter a new twittister handle and a textbox and then below it text that outputs what their new twittister handle is: 
   <div class="container">
     <div >
+    	<p>Helo Twittister</p>
       <label>What do you want ur twittister handle to be?</label>
       <input type="text" />
       <h2>Your twittister handle is: </h2>
@@ -130,9 +131,20 @@ Add that angular module reference as an angular directive to ur html element:
 	In the html tag: 
 	ng-app="angularApp"
 
-Create a controller in the angular module of the js file: 
+Create a basic controller in the angular module of the js file: 
+	angularApp.controller('mainController', function() {
+	});
+
+Set up some string interpolation by: 
+
+Add the scope service to your controller: 
+	Should look like this: 
 	angularApp.controller('mainController', ['$scope', function ($scope ) {
-	}]);
+  }]);
+
+Add a new object/var in the scope called name and give it your name in string: 
+	In the controller: 
+	$scope.name = 'Kenny Ken ken';
 
 Add a directive to a div in ur html to reference the controller: 
   <div ng-controller="mainController" >
@@ -141,7 +153,18 @@ Add a directive to a div in ur html to reference the controller:
     <h2>Your twittister handle is: </h2>
     <h2>twittister.com/ {{handle}} </h2>
 	</div>
-	
+
+Add some extra html using Angular string intperpolation to insert your name into something like "How are you Kenny":
+  <div class="container">
+    <div >
+    	<p>Helo Twittister. How are you {{name}}</p>
+      <label>What do you want ur twittister handle to be?</label>
+      <input type="text" />
+      <h2>Your twittister handle is: </h2>
+      <h2>twittister.com/ </h2>
+    </div>
+  </div>		
+
 Add a model directive to a text box:
 	In the same div: 
 	<input type="text" ng-model="handle"/>
@@ -150,4 +173,13 @@ Create a model in the controller to connect with the model in the view
 	In the controller: 
 	$scope.handle = '';
 
-create a scope? 
+Add another service called $timeout and use it in the controller by passing it a function that changes the string content of the name var to something else after two seconds: 
+	angularApp.controller('mainController', ['$scope', '$timeout',  function('$scope', '$timeout' ) {
+		$timeout(function() {
+			$scope.name = 'Willy Wonka';
+		}, 2000);
+  }]);	
+
+Go see it work in the browser dude: 
+
+

@@ -7,5 +7,6 @@ angularApp.controller('mainController', ['$scope', function ($scope ) {
 	// $scope.lowercasehandle = function() {
 	// 	return $filter('lowercase')($scope.handle);
 	// };
+	
 
 }]);
