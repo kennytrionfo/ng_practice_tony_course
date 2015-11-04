@@ -131,15 +131,15 @@ Add that angular module reference as an angular directive to ur html element:
 	In the html tag: 
 	ng-app="angularApp"
 
-Create a basic controller in the angular module of the js file with the name of 'handle': 
-	angularApp.controller('mainController', function() {
-	});
+Do some angular string interpolation by : 
 
-Set up some string interpolation by: 
+Create a basic controller in the angular module of the js file with the name of 'string': 
+	angularApp.controller('stringController', function() {
+	});
 
 Add the scope service to your controller: 
 	Should look like this: 
-	angularApp.controller('mainController', ['$scope', function ($scope ) {
+	angularApp.controller('stringController', ['$scope', function ($scope ) {
   }]);
 
 Add a new object/var in the scope called name and give it your name in string: 
@@ -151,12 +151,12 @@ Add a directive to a div in ur html to reference the controller:
     <label>What do you want ur twittister handle to be?</label>
     <input type="text" />
     <h2>Your twittister handle is: </h2>
-    <h2>twittister.com/ {{handle}} </h2>
+    <h2>twittister.com/ </h2>
 	</div>
 
 Add some extra html using Angular string intperpolation to insert your name into something like "How are you Kenny":
   <div class="container">
-    <div >
+    <div ng-controller="mainController" >
     	<p>Helo Twittister. How are you {{name}}</p>
       <label>What do you want ur twittister handle to be?</label>
       <input type="text" />

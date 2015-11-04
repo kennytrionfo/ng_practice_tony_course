@@ -4,10 +4,11 @@
 	<title>Twittister</title>
 	<meta charset="UTF-8">
 	<!-- /////////////////////////========Scripts=======\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
-	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
 	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
-	<script type="text/javascript" scr="angular.min.js"></script>
-	<script type="text/javascript" scr="twittister.js"></script>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="twittister.js"></script>
+
 </head>
 <body>
 	<header>
@@ -25,8 +26,8 @@
 	</header>
 
 	<div class="container">
-		<div  >
-			<p>Hello Twittiser</p>
+		<div  ng-controller="stringController">
+			<p>Hello Twittiser. How are you {{name}} ? </p>
 			<label>What would you like your twitter handle to be?</label>
 			<input type="text" >
 			<h2>Your new twittister handle is:</h2>
