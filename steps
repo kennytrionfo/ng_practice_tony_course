@@ -147,7 +147,7 @@ Add a new object/var in the scope called name and give it your name in string:
 	$scope.name = 'Kenny Ken ken';
 
 Add a directive to a div in ur html to reference the controller: 
-  <div ng-controller="mainController" >
+  <div ng-controller="stringController" >
     <label>What do you want ur twittister handle to be?</label>
     <input type="text" />
     <h2>Your twittister handle is: </h2>
@@ -156,7 +156,7 @@ Add a directive to a div in ur html to reference the controller:
 
 Add some extra html using Angular string intperpolation to insert your name into something like "How are you Kenny":
   <div class="container">
-    <div ng-controller="mainController" >
+    <div ng-controller="stringController" >
     	<p>Helo Twittister. How are you {{name}}</p>
       <label>What do you want ur twittister handle to be?</label>
       <input type="text" />
@@ -164,6 +164,10 @@ Add some extra html using Angular string intperpolation to insert your name into
       <h2>twittister.com/ </h2>
     </div>
   </div>		
+
+Create a new controller, using a new scope service, with a new object that ties to the text box so we can get a user twittister handle dynamically: 
+
+Add add a directive to a some html element that will reference the new controller:
 
 Add a model directive to a text box:
 	In the same div: 
@@ -173,13 +177,14 @@ Create a model in the controller to connect with the model in the view
 	In the controller: 
 	$scope.handle = '';
 
-Add another service called $timeout and use it in the controller by passing it a function that changes the string content of the name var to something else after two seconds: 
+Put the string interpolated reference to the new var/model/object 'handle' in the html and test. Should see. 
+
+Back in the String Controller, add another service called $timeout and use it in the controller by passing it a function that changes the string content of the name var to something else after two seconds: 
 	angularApp.controller('mainController', ['$scope', '$timeout',  function('$scope', '$timeout' ) {
 		$timeout(function() {
 			$scope.name = 'Willy Wonka';
 		}, 2000);
   }]);	
 
-Go see it work in the browser dude: 
 
 

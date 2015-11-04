@@ -28,10 +28,11 @@
 	<div class="container">
 		<div  ng-controller="stringController">
 			<p>Hello Twittiser. How are you {{name}} ? </p>
+		</div>
+		<div ng-controller="handleController" >
 			<label>What would you like your twitter handle to be?</label>
-			<input type="text" >
-			<h2>Your new twittister handle is:</h2>
-			<h2>www.twittister.com/ </h2>
+			<input type="text" ng-model="handle">
+			<h2>Your new twittister handle will be: www.twittister.com/{{handle}} </h2>
 		</div>
 	</div>
 
