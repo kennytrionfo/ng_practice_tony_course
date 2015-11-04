@@ -131,7 +131,7 @@ Add that angular module reference as an angular directive to ur html element:
 	In the html tag: 
 	ng-app="angularApp"
 
-Create a basic controller in the angular module of the js file: 
+Create a basic controller in the angular module of the js file with the name of 'handle': 
 	angularApp.controller('mainController', function() {
 	});
 
