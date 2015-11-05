@@ -116,7 +116,21 @@ Put in a Navbar:
 		</nav>
 	</header>
 
-Put in a container div with another div in it and in it a Hello Twittister and then a label to enter a new twittister handle and a textbox and then below it text that outputs what their new twittister handle is: 
+Create a variable object in your js file that is the angular module: 
+	In ur js file:
+	var angularApp = angular.module('angularApp', []);
+
+Add that angular module reference as an angular directive to ur html element:
+	In the html tag: 
+	ng-app="angularApp"
+
+Add to html a div with a p element in it with "This is my random phrase:" in it. 
+
+Do some angular string interpolation by creating a basic controller in the angular module of the js file with the name of 'string': 
+	angularApp.controller('stringController', function() {
+	});
+
+Put in a container div with another div in it and in it a Hello Twittister P element and then a label to enter a new twittister handle and a textbox and then below it text that outputs what their new twittister handle is: 
   <div class="container">
     <div >
     	<p>Helo Twittister</p>
@@ -127,19 +141,8 @@ Put in a container div with another div in it and in it a Hello Twittister and t
     </div>
   </div>	
 
-Create a variable object in your js file that is the angular module: 
-	In ur js file:
-	var angularApp = angular.module('angularApp', []);
 
-Add that angular module reference as an angular directive to ur html element:
-	In the html tag: 
-	ng-app="angularApp"
 
-Do some angular string interpolation by : 
-
-Create a basic controller in the angular module of the js file with the name of 'string': 
-	angularApp.controller('stringController', function() {
-	});
 
 Add the scope service to your controller: 
 	Should look like this: 

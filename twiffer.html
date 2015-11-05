@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="twifferApp">
 <head>
 	<title>Twiffer</title>
 	<meta charset="UTF-8">
 <!-- /////////////////////////========Scripts=======\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
-	<script src="angular.min.js" />
-	<script src="twiffer.js" />
+	<script src="angular.min.js"></script>
+	<script src="twiffer.js" ></script>
 </head>
+
 <body>
 	<header>
 		<nav class="navbar navbar-default">
@@ -22,6 +23,10 @@
 			</div>
 		</nav>
 	</header>
+
+	<div class="container" >
+		<p ng-controller="stringController">This is my random phrase dude: {{randomPhrase}} </p>
+	</div>
 
 </body>
 </html>
