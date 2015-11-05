@@ -80,9 +80,13 @@ Create a div in ur html with a controller as the attribute. Give it the name of 
 	</div>
 
 
+The idea basically is: 
+Create the variable in the js.
+Bind an html element to it with a directive then, 
+Show the object in the view 
+
 
 <!-- /////////////////////////========Twitter Project=======\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
-
 Create an html page with the UTF-8 charset metatag, a link element linking to ur minified bootstrap file or the CDN link and ur script elements to either a minified local file or a CDN link to anguar, jquery and ur js files in ur head element: 
 	<head>
 		<title>Twitter</title>
