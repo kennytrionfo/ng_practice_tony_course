@@ -25,7 +25,14 @@
 	</header>
 
 	<div class="container" >
-		<p ng-controller="stringController">This is my random phrase dude: {{randomPhrase}} </p>
+		<div>
+			<p ng-controller="stringController">This is my random phrase dude: {{randomPhrase}} </p>
+			<label>What do you want ur twiffer handle to be? </label>
+				<input type="text" ng-model="handle" />
+			<h4>This is what ur twiffer handle will look like:  </h4>
+			<h4>www.twiffer.com/ {{handle}} </h4>
+
+		</div>
 	</div>
 
 </body>
