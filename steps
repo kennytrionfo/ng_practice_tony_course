@@ -130,7 +130,7 @@ Do some angular string interpolation by creating a basic controller in the angul
 	angularApp.controller('stringController', function() {
 	});
 
-Add the scope service to your controller: 
+Inject the service/object Scope to your controller: 
 	Should look like this: 
 	angularApp.controller('stringController', ['$scope', function ($scope ) {
   }]);
@@ -160,7 +160,7 @@ Bind an html element to a var in ur ng module by first creating a label and inpu
     </div>
   </div>	
 
-Create a var/model called 'handle' that's an empty string in a new controller called 'handle' in ur angularApp module with the scope service: 
+Create a var/model called 'handle' that's an empty string in a new controller called 'handle' in ur angularApp module that ur injecting the Scope service/object: 
 	angularApp.controller('handleController', ['$scope',  function ($scope) {
 		$scope.handle = ' ';
 	}]);
@@ -173,7 +173,7 @@ Put the string interpolated reference to the new var/model/object 'handle' in th
 	After ur www.twiffer.com/: 
 	<h4>www.twiffer.com/ {{handle}} </h4>
 
-Back in the String Controller, add another service called $timeout and use it in the controller by passing it a function that changes the string content of the name var to something else after two seconds: 
+Back in the String Controller, add another service/object called $timeout and use it in the controller by passing it a function that changes the string content of the name var to something else after two seconds: 
 	angularApp.controller('mainController', ['$scope', '$timeout',  function('$scope', '$timeout' ) {
 		$timeout(function() {
 			$scope.name = 'Willy Wonka';
