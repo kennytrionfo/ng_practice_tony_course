@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="twinnerApp">
 <head>
 	<title>Twinner</title>
 <!-- /////////////////////////========Scripts=======\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
@@ -19,9 +19,24 @@
 						<img src="b.png">
 					</a>
 				</div>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">The WHY</a></li>
+					<li><a href="#">Two</a></li>
+					<li><a href="#">Three</a></li>
+				</ul>
 			</div>			
 		</nav>
 	</header>
+
+	<div class="container">
+		<div  >
+			<p  ng-controller="stringController">This is my random Phrase: {{phrase}} </p>
+			<label>What would you like ur twinner handle to be?: </label>
+			<input type="text" ng-model="handle" />
+			<h3>Youre Twinner handle will be: </h3>
+			<h3>Twinner.com/{{handle}} </h3>
+		</div>
+	</div>
 
 
 

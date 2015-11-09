@@ -118,11 +118,11 @@ Put in a Navbar:
 
 Create a variable object in your js file that is the angular module: 
 	In ur js file:
-	var angularApp = angular.module('angularApp', []);
+	var angularApp = angular.module('someName', []);
 
 Add that angular module reference as an angular directive to ur html element:
 	In the html tag: 
-	ng-app="angularApp"
+	ng-app="someName "
 
 Add to html a containter div with another plain div in it with a p element in it with "This is my random phrase:" in it. 
 
@@ -137,7 +137,7 @@ Inject the service/object Scope to your controller:
 
 Add a new object/var in the scope called name and give it your name in string: 
 	In the controller: 
-	$scope.name = 'Kenny Ken ken';
+	$scope.phrase = 'Kenny Ken ken';
 
 In ur P element in the html add a directive that points to the string controller that you put in the angular module in the js file: 
 	<div class="container" >
@@ -152,7 +152,7 @@ Show the randomPhrase var in the P element using string interpolation:
 Bind an html element to a var in ur ng module by first creating a label and input box under your P element asking for input of what they want their twiffer handle to be, as well as a little output diaglog like "Your twitter handle is ..." : 
   <div class="container">
     <div >
-    	<p>Helo Twittister</p>
+    	<p>This is my random Phrase: {{phrase}} </p>
       <label>What do you want ur twittister handle to be?</label>
       <input type="text" />
       <h2>Your twittister handle is: </h2>
@@ -176,9 +176,10 @@ Put the string interpolated reference to the new var/model/object 'handle' in th
 Back in the String Controller, add another service/object called $timeout and use it in the controller by passing it a function that changes the string content of the name var to something else after two seconds: 
 	angularApp.controller('mainController', ['$scope', '$timeout',  function('$scope', '$timeout' ) {
 		$timeout(function() {
-			$scope.name = 'Willy Wonka';
+			$scope.phrase = 'Willy Wonka';
 		}, 2000);
   }]);	
 
+ 
 
 
