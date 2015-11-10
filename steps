@@ -104,8 +104,9 @@ Back in the String Controller, add another service/object called $timeout and us
   }]);	
 
 Set up routing by:
+Add a folder called pages with a main.html page and a second.html page
 
-Adding the ng-route dependency to the app:
+Adding the ng-route dependency to the app to use to route urls to different pages:
 	In the html file add a script link to the angular router of choice (ie ng-route or ui route etc), linking it either to a file with the downloaded file or to the website like: 
 	<script type="text/javascript" src="//code.angularjs.org/1.4.7/angular-route.min.js "></script>
 
@@ -114,6 +115,26 @@ Tell the app that ur going to use this module which will be a dependency, by put
 	var angularApp = angular.module('twinnerApp', ['ngRoute ']);	
 
 Use the .config method that ngRoute module provides and call it on the app and pass in the $routeProvider service? to the function: 
-	
+	myApp.config(function($routeProvider) {
+		
+	});
 
+Now pass the ng-route function to the config method to connect two different URLs to two different controllers by useing the when method and passing in the url, a json object that has the key/value pairs of The templateUrl and the controller: 
+	myApp.config(function($routeProvider) {
+		$routeProvider
+			.when('/',  {
+				templateUrl: 'pages/main.html', 
+				controller: 'mainController'
+			}) 
+			.when('/second', {
+				templateUrl: 'pages/second.html'
+				controller: 'secondController'
+			})
+	});
 
+Create a second controller for the second .when method to connect to: 
+	myApp.controller('secondController', ['$scope', function ($scope) {
+ 
+	}]);
+
+kentrionfo@gmail.com
