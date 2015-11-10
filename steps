@@ -79,10 +79,14 @@ Bind an html element to a var in ur ng module by first creating a label and inpu
     </div>
   </div>	
 
-Create a var/model called 'handle' that's an empty string in a new controller called 'handle' in ur angularApp module that ur injecting the Scope service/object: 
+Create a var/model called 'handle' that's an empty string in a new controller called 'handleController' in ur angularApp module that ur injecting the Scope service/object: 
 	angularApp.controller('handleController', ['$scope',  function ($scope) {
 		$scope.handle = ' ';
 	}]);
+
+Add a ng-controller directive to the html element that your going to get the user's input in: 
+	 Like maybe in the input element: 
+   <input type="text" ng-controller="handleController" ng-model="handle" />
 
 Add a directive to the Input element in ur html to bind the input to the handle var/model in new handleController: 
 	In the same div: 
@@ -102,7 +106,14 @@ Back in the String Controller, add another service/object called $timeout and us
 Set up routing by:
 
 Adding the ng-route dependency to the app:
+	In the html file add a script link to the angular router of choice (ie ng-route or ui route etc), linking it either to a file with the downloaded file or to the website like: 
+	<script type="text/javascript" src="//code.angularjs.org/1.4.7/angular-route.min.js "></script>
 
+Tell the app that ur going to use this module which will be a dependency, by putting the dependency into the dependencies in the app: 
+	In ur js file:
+	var angularApp = angular.module('twinnerApp', ['ngRoute ']);	
 
+Use the .config method that ngRoute module provides and call it on the app and pass in the $routeProvider service? to the function: 
+	
 
 
