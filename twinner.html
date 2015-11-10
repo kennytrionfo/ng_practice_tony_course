@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="	twinner.css">
 	<script type="text/javascript" src="angular.min.js"></script>
-	<script type="text/javascript" src="//code.angularjs.org/1.4.7/angular-route.min.js "></script>
+	<script type="text/javascript" src="angular-route.min.js"></script>
 	<script type="text/javascript" src="twinner.js"></script>
 </head>
 <body>
@@ -20,8 +20,8 @@
 					</a>
 				</div>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">The WHY</a></li>
-					<li><a href="#">Two</a></li>
+					<li><a href="#/">The WHY</a></li>
+					<li><a href="#/second">Second Page</a></li>
 					<li><a href="#">Three</a></li>
 				</ul>
 			</div>			
@@ -30,12 +30,16 @@
 
 	<div class="container">
 		<div  >
-			<p  ng-controller="stringController">This is my random Phrase: {{phrase}} </p>
+			<p  ng-controller="stringController" >This is my random Phrase: {{phrase}} </p>
 			<label>What would you like ur twinner handle to be?: </label>
-			<input type="text" ng-controller="handleController" ng-model="handle" />
+			<input type="text"  ng-model="handle" />
 			<h3>Youre Twinner handle will be: </h3>
-			<h3>Twinner.com/{{handle}} </h3>
+			<h3 >Twinner.com/{{handle}} </h3>
 		</div>
+		<hr>
+		<div ng-view >
+		</div>
+
 	</div>
 
 

@@ -137,4 +137,9 @@ Create a second controller for the second .when method to connect to:
  
 	}]);
 
-kentrionfo@gmail.com
+Add the '/' and the '/second' to the menu bar links:
+	<li><a href="#/">The WHY</a></li>
+	<li><a href="#/second">Second Page</a></li>
+
+Go to / and see if Main show's up. 
+

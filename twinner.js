@@ -19,9 +19,16 @@ angularApp.controller('stringController', ['$scope', '$timeout', function ($scop
 	}, 2000);
 }]);
 
-angularApp.controller('handleController', ['$scope', function ($scope) {
+angularApp.controller('handleController', ['$scope', '$timeout', function ($scope, $timeout) {
 	$scope.handle = ''; 
+	$timeout(function() {
+		$scope.handle = 'After two seconds, I should be here!';
+	}, 2000);
 }]);
 
-angularApp.controller('secondController',  ['$scope', function ($scope) {
+angularApp.controller('secondController',  ['$scope', '$timeout', function ($scope, $timeout) {
+	$scope.handle = ''; 
+	$timeout(function() {
+		$scope.handle = 'After THREE seconds, I should be here!';
+	}, 3000);
 }]);
