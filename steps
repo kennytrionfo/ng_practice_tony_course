@@ -1,90 +1,9 @@
-steps for tony course
-
-Create a basic html index page or something: 
-	<nav class="navbar navbar-default">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <a class="navbar-brand" href="#">Bootstrapped Site</a>
-	    </div>
-	    <div>
-	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="#">Home</a></li>
-	        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-	          <ul class="dropdown-menu">
-	            <li><a href="#">Page 1-1</a></li>
-	            <li><a href="#">Page 1-2</a></li>
-	            <li><a href="#">Page 1-3</a></li>
-	          </ul>
-	        </li>
-	        <li><a href="#">Page 2</a></li>
-	        <li><a href="#">Page 3</a></li>
-	      </ul>
-	    </div>
-	  </div>
-	</nav>
-	  
-	<div class="container">
-	  <div class="jumbotron">
-	    <h1>A quick Bootstrapped website!</h1>      
-	    <p>This page will grow as we add more and more components from Bootstrap...</p>      
-	    <a href="#" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-search"></span> Search</a>
-	  </div>
-
-	  <div class="row">
-	    <div class="col-md-3">
-	      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-	    </div>
-	    <div class="col-md-3"> 
-	      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-	    </div>
-	    <div class="col-md-3"> 
-	      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-	    </div>
-	    <div class="col-md-3">
-	      <ul class="nav nav-pills nav-stacked">
-	        <li class="active"><a href="#">Home</a></li>
-	        <li class="dropdown">
-	          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu 1 <span class="caret"></span></a>
-	          <ul class="dropdown-menu">
-	            <li><a href="#">Submenu 1-1</a></li>
-	            <li><a href="#">Submenu 1-2</a></li>
-	            <li><a href="#">Submenu 1-3</a></li>                        
-	          </ul>
-	        </li>
-	        <li><a href="#">Menu 2</a></li>
-	        <li><a href="#">Menu 3</a></li>
-	      </ul>
-	    </div>
-	    <div class="clearfix visible-lg"></div>
-	  </div>
-	</div>
-
-Create a js file and assign one object the angular module and pass in the name of ur app: 
-	In the js file you create: 
-	var myApp = angular.module('myApp', []);
-
-Tell angular what part of the view is going to be controlled by the app:
-	Put the angular app directive somewhere in ur html:
-	Like:
-	<html ng-app="myApp">
-
-Declare a controller in your js file, passing in a name and function: 
-	myApp.controller('mainController', function() {
-
-	});
-
-
-
-Create a div in ur html with a controller as the attribute. Give it the name of the controller u created in the js. 
-	<div ng-controller="mainController" >
-	</div>
-
+steps for twitter app replication
 
 The idea basically is: 
 Create the variable in the js.
 Bind an html element to it with a directive then, 
 Show the object in the view 
-
 
 <!-- /////////////////////////========Twitter Project=======\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
 Create an html page with the UTF-8 charset metatag, a link element linking to ur minified bootstrap file or the CDN link and ur script elements to either a minified local file or a CDN link to anguar, jquery and ur js files in ur head element: 
@@ -144,7 +63,7 @@ In ur P element in the html add a directive that points to the string controller
 		<p ng-controller="stringController">This is my random phrase dude: </p>
 	</div>
 
-Show the randomPhrase var in the P element using string interpolation: 
+Put a watcher on the var in the view by showing the randomPhrase var in the P element using string interpolation: 
 	<div class="container" >
 		<p ng-controller="stringController">This is my random phrase dude: {{randomPhrase}} </p>
 	</div>
@@ -180,6 +99,10 @@ Back in the String Controller, add another service/object called $timeout and us
 		}, 2000);
   }]);	
 
- 
+Set up routing by:
+
+Adding the ng-route dependency to the app:
+
+
 
 
