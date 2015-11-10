@@ -143,3 +143,6 @@ Add the '/' and the '/second' to the menu bar links:
 
 Go to / and see if Main show's up. 
 
+Add a timer or something you'd lilke to see happen in the controllers to prove they're reaching the view if you want. 
+
+

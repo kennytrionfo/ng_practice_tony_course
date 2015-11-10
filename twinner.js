@@ -20,15 +20,15 @@ angularApp.controller('stringController', ['$scope', '$timeout', function ($scop
 }]);
 
 angularApp.controller('handleController', ['$scope', '$timeout', function ($scope, $timeout) {
-	$scope.handle = ''; 
+	$scope.delayedPhrase = ''; 
 	$timeout(function() {
-		$scope.handle = 'After two seconds, I should be here!';
+		$scope.delayedPhrase = 'After two seconds, I should be here!';
 	}, 2000);
 }]);
 
 angularApp.controller('secondController',  ['$scope', '$timeout', function ($scope, $timeout) {
-	$scope.handle = ''; 
+	$scope.delayedPhrase = ''; 
 	$timeout(function() {
-		$scope.handle = 'After THREE seconds, I should be here!';
+		$scope.delayedPhrase = 'After THREE seconds, I should be here!';
 	}, 3000);
 }]);
