@@ -1,12 +1,16 @@
 var angularApp = angular.module('twinnerApp', ['ngRoute']);
 
+angularApp.service('nameService', function() {
+	
+});
+
 angularApp.config(function($routeProvider) {
 	$routeProvider
 		.when('/', {
 			templateUrl: 'pages/main.html', 
 			controller: 'handleController'
 		})
-		.when('/second', {
+		.when('/second/:num', {
 			templateUrl: 'pages/second.html',
 			controller: 'secondController'
 		})
@@ -26,9 +30,10 @@ angularApp.controller('handleController', ['$scope', '$timeout', function ($scop
 	}, 2000);
 }]);
 
-angularApp.controller('secondController',  ['$scope', '$timeout', function ($scope, $timeout) {
+angularApp.controller('secondController',  ['$scope', '$timeout', '$routeParams', function ($scope, $timeout, $routeParams) {
 	$scope.delayedPhrase = ''; 
 	$timeout(function() {
 		$scope.delayedPhrase = 'After THREE seconds, I should be here!';
 	}, 3000);
+	$scope.num = $routeParams.num;
 }]);

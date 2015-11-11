@@ -145,4 +145,19 @@ Go to / and see if Main show's up.
 
 Add a timer or something you'd lilke to see happen in the controllers to prove they're reaching the view if you want. 
 
+Pass ur URL a value using pattern matching: 
+
+In ur config method, add :num to the second url: 
+	On this line:
+	.when('/second/:num', {
+
+Inject the $routeParams service, that ng-route module gives us, into the secondController controller: 
+	First line should look like: 
+	angularApp.controller('secondController',  ['$scope', '$timeout', '$routeParams', function ($scope, $timeout, $routeParams) {
+
+Make the value of whatever is passed into the URL hash, a property of routeParams, by appending it on the $routeParams object and assigning it to a variable in ur scope: 
+
+Create a custom service called nameService by calling the .service method on ur app: 
+	angularApp.service('nameService', function() {
+	});	
 
