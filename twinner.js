@@ -1,7 +1,7 @@
 var angularApp = angular.module('twinnerApp', ['ngRoute']);
 
 angularApp.service('nameService', function() {
-	
+	this.name = "I'm the name of the nameService !" 	
 });
 
 angularApp.config(function($routeProvider) {
@@ -23,11 +23,13 @@ angularApp.controller('stringController', ['$scope', '$timeout', function ($scop
 	}, 2000);
 }]);
 
-angularApp.controller('handleController', ['$scope', '$timeout', function ($scope, $timeout) {
+angularApp.controller('handleController', ['$scope', '$timeout', 'nameService', function ($scope, $timeout, nameService) {
 	$scope.delayedPhrase = ''; 
 	$timeout(function() {
 		$scope.delayedPhrase = 'After two seconds, I should be here!';
 	}, 2000);
+	$scope.billybob = nameService.name;
+
 }]);
 
 angularApp.controller('secondController',  ['$scope', '$timeout', '$routeParams', function ($scope, $timeout, $routeParams) {

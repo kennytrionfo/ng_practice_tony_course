@@ -161,3 +161,16 @@ Create a custom service called nameService by calling the .service method on ur 
 	angularApp.service('nameService', function() {
 	});	
 
+Add a var in this service that we can use in the view: 
+
+Inject this new service into your handle Controller and create a new var and assign the new service's var to it: 
+	angularApp.controller('handleController', ['$scope', '$timeout', 'nameService', function ($scope, $timeout, nameService) {
+	$scope.billybob = nameService.name;
+
+Put the new var into a view that's tied to that controller: 
+	<div ng-controller="handleController" >
+	<p> {{billybob}} </p>
+
+
+
+
