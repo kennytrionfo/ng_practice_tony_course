@@ -171,6 +171,10 @@ Put the new var into a view that's tied to that controller:
 	<div ng-controller="handleController" >
 	<p> {{billybob}} </p>
 
+Create a custom directive: 
+
+Create a search feature on the main page: 
+	
 
 
 

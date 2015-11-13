@@ -1,6 +1,17 @@
-<h1>This is Main Page View</h1>
-<div ng-controller="handleController" >
-	<p> {{billybob}} </p>
-	<p>{{delayedPhrase}}	</p>
-
+<h1 style="text-align:center">I'm from the first Template</h1>
+<div class="container" >
+	<div class="row" >
+		<div class="col-md-6" >
+			<div ng-controller="handleController" >
+				<p> {{billybob}} </p>
+				<p>{{delayedPhrase}}	</p>
+			</div>
+		</div>
+		<div class="col-md-6" >
+			<p>I'm over here on the right side. </p>
+			<label>Search</label>
+			<input type="text" value="Bobby Joe" />
+			<h3>Search Results</h3>
+		</div>
+	</div>
 </div>
