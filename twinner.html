@@ -29,15 +29,16 @@
 	</header>
 
 	<div class="container">
-		<div  >
+		<div class="col-md-6" >
 			<p  ng-controller="stringController" >This is my random Phrase: {{phrase}} </p>
 			<label>What would you like ur twinner handle to be?: </label>
 			<input type="text"  ng-model="handle" />
 			<h3>Youre Twinner handle will be: </h3>
 			<h3 >Twinner.com/{{handle}} </h3>
 		</div>
-		<hr>
-		<ng-view></ng-view>
+		<div class="col-md-6" >
+			<ng-view></ng-view>
+		</div>
 
 	</div>
 
