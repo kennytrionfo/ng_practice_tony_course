@@ -174,7 +174,34 @@ Put the new var into a view that's tied to that controller:
 Create a custom directive: 
 
 Create a search feature on the main page: 
-	
+	 Put a little search area on the page with a search label, a box and search results listing using bootstrap list item, custom content html. 
+	 Convert the bootstrap search results html to a custom directive: 
+	 	In ur js file, attach a directive to the angular app called 'searchResult' and give it a function that returns an object (the directive), with a template property (that is the html that gets outputted when this directive is used). 
+	 		angularApp.directive('searchResult', function() {
+				return {
+					template: '<a href="#" class="list-group-item ">
+			    <h4 class="list-group-item-heading">Frankie Jibbs</h4>
+			    <p class="list-group-item-text">222 Main St., New York, NY 22222 </p>
+			  </a>'
+				}
+			});
+	 	Now get rid of the original 'search results' html and replace with your new directive normalizing the camelcase name of it to dashes. 
+	 	  <search-result></search-result>
+	 		Rf and should see results.
+	 		Add the 'replace:true' property on ur directive's object, rf and rendered html should be just the directive's html and u shouldn't see the angular <search-result> element anymore in the pages loaded html if you check in inspect element. 
+	 			<search-result></search-result>
+			  <search-result></search-result>
+			  <search-result></search-result>
+			Use another way of inputting a directive by putting the name of it into a div like: 
+			  <search-result></search-result>
+				<div search-result ></div>			  
+			  <search-result></search-result>
+			Modularize your directive html code by putting it into a file in a folder and reference it from inside ur directive: 
+				
+
+
+
+
 
 
 
