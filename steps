@@ -171,10 +171,11 @@ Put the new var into a view that's tied to that controller:
 	<div ng-controller="handleController" >
 	<p> {{billybob}} </p>
 
-Create a custom directive: 
+Create a custom directive by: 
 
 Create a search feature on the main page: 
 	 Put a little search area on the page with a search label, a box and search results listing using bootstrap list item, custom content html. 
+	 
 	 Convert the bootstrap search results html to a custom directive: 
 	 	In ur js file, attach a directive to the angular app called 'searchResult' and give it a function that returns an object (the directive), with a template property (that is the html that gets outputted when this directive is used). 
 	 		angularApp.directive('searchResult', function() {
@@ -197,6 +198,12 @@ Create a search feature on the main page:
 				<div search-result ></div>			  
 			  <search-result></search-result>
 			Modularize your directive html code by putting it into a file in a folder and reference it from inside ur directive: 
+				In main app, create a new folder called directives. 
+				In that folder create a file called searchresult.html
+				Take the html contents from your custom 'searchResults' directive and put them into this new html file. 
+				In the object of the searchResult template, reference the new html in the new place by changing the template key to templateURL and make it's value the path to the new file like: 
+					templateURL: 'directives/searchResult.html'
+					rf & check.
 				
 
 

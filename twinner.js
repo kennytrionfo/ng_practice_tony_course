@@ -42,7 +42,7 @@ angularApp.controller('secondController',  ['$scope', '$timeout', '$routeParams'
 
 angularApp.directive("searchResult", function() {
 	return {
-		template: '<a href="#" class="list-group-item "><h4 class="list-group-item-heading">Frankie Jibbs</h4><p class="list-group-item-text">222 Main St., New York, NY 22222 </p></a>',
+		templateURL: 'directives/searchResult.html',
 		replace:true
 
 	}
