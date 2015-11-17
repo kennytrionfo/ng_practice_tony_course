@@ -204,7 +204,28 @@ Create a search feature on the main page:
 				In the object of the searchResult template, reference the new html in the new place by changing the template key to templateURL and make it's value the path to the new file like: 
 					templateURL: 'directives/searchResult.html'
 					rf & check.
-				
+Modularize the use of models by putting a new model 'Person' with a name and address property, in the handleController cuz that's the one that you're connecting/using with your main.html template/view which is where ur using your new 'search-result' directive. 
+		In ur handleController: 
+		person = {
+			name: 'Fluffy Funnelcakes', 
+			address: '1212 Bigdog lane'
+		};
+
+		Then in searchResult directive object (which is now our searchResult.html file), interpolate the name and address property of the person object like: 
+			<a href="#" class="list-group-item " ng-controller="stringController">
+				<h4 class="list-group-item-heading">{{person.name}} </h4>
+				<p class="list-group-item-text">{{person.address}} </p>
+			</a>		
+
+
+
+Refactor
+	Put in comments
+	Modularize by putting like types of code etc into groups within the same file or separate files. 
+	DRY it out by reducing the total lines of code as much as poss. 
+
+
+
 
 
 

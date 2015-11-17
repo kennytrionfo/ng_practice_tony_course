@@ -21,6 +21,10 @@ angularApp.controller('stringController', ['$scope', '$timeout', function ($scop
 	$timeout(function() {
 		$scope.phrase = "What would I do without your sweet mouth ";
 	}, 2000);
+	$scope.person = {
+		name: 'Kippy Dango', 
+		address: '234 Digidy Dog'
+	}
 }]);
 
 angularApp.controller('handleController', ['$scope', '$timeout', 'nameService', function ($scope, $timeout, nameService) {
@@ -42,8 +46,7 @@ angularApp.controller('secondController',  ['$scope', '$timeout', '$routeParams'
 
 angularApp.directive("searchResult", function() {
 	return {
-		templateURL: 'directives/searchResult.html',
-		replace:true
-
+		templateUrl: 'directives/searchResult.html',  
+		replace:true             
 	}
 });
