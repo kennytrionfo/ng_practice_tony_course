@@ -35,7 +35,7 @@ Put in a Navbar:
 		</nav>
 	</header>
 
-Create a variable object in your js file that is the angular module: 
+Create ur js file and create a variable/object in your js file that is the angular module: 
 	In ur js file:
 	var angularApp = angular.module('someName', []);
 
@@ -45,20 +45,20 @@ Add that angular module reference as an angular directive to ur html element:
 
 Add to html a containter div with another plain div in it with a p element in it with "This is my random phrase:" in it. 
 
-Do some angular string interpolation by creating a basic controller in the angular module of the js file with the name of 'string': 
-	angularApp.controller('stringController', function() {
+Do some angular string interpolation by creating a basic controller in the angular module of the js file with the name of 'phrase': 
+	angularApp.controller('phraseController', function() {
 	});
 
-Inject the service/object Scope to your controller: 
+Inject the service/object $scope into your controller: 
 	Should look like this: 
 	angularApp.controller('stringController', ['$scope', function ($scope ) {
   }]);
 
-Add a new object/var in the scope called name and give it your name in string: 
+Add a new object/var in the scope called phrase that is a randome phrase in a string: 
 	In the controller: 
 	$scope.phrase = 'Kenny Ken ken';
 
-In ur P element in the html add a directive that points to the string controller that you put in the angular module in the js file: 
+In ur P element in the html, add a directive that points to the phrase controller that you put in the angular module in the js file: 
 	<div class="container" >
 		<p ng-controller="stringController">This is my random phrase dude: </p>
 	</div>
@@ -68,7 +68,8 @@ Put a watcher on the var in the view by showing the randomPhrase var in the P el
 		<p ng-controller="stringController">This is my random phrase dude: {{randomPhrase}} </p>
 	</div>
 
-Bind an html element to a var in ur ng module by first creating a label and input box under your P element asking for input of what they want their twiffer handle to be, as well as a little output diaglog like "Your twitter handle is ..." : 
+Bind an html element to a var in ur ng module by:
+First creating a label and input box under your P element asking for input of what they want their twiffer handle to be, as well as a little output diaglog like "Your twitter handle is ..." : 
   <div class="container">
     <div >
     	<p>This is my random Phrase: {{phrase}} </p>
@@ -87,6 +88,8 @@ Create a var/model called 'handle' that's an empty string in a new controller ca
 Add a ng-controller directive to the html element that your going to get the user's input in: 
 	 Like maybe in the input element: 
    <input type="text" ng-controller="handleController" ng-model="handle" />
+   or the container div that it's in:
+   <div ng-controller="handleController">
 
 Add a directive to the Input element in ur html to bind the input to the handle var/model in new handleController: 
 	In the same div: 
@@ -96,13 +99,14 @@ Put the string interpolated reference to the new var/model/object 'handle' in th
 	After ur www.twiffer.com/: 
 	<h4>www.twiffer.com/ {{handle}} </h4>
 
-Back in the String Controller, add another service/object called $timeout and use it in the controller by passing it a function that changes the string content of the name var to something else after two seconds: 
+Back in the phraseController, add another service/object called $timeout and use it in the controller by passing it a function that changes the string content of the phraseController var to something else after two seconds: 
 	angularApp.controller('mainController', ['$scope', '$timeout',  function('$scope', '$timeout' ) {
 		$timeout(function() {
 			$scope.phrase = 'Willy Wonka';
 		}, 2000);
   }]);	
-
+  rf and see. 
+  
 Set up routing by:
 Add a folder called pages with a main.html page and a second.html page
 

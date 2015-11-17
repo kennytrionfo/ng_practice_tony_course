@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="sipper">
 <head>
 	<title>Sipper</title>
 	<meta charset="UTF-8">
@@ -13,10 +13,23 @@
 		<nav class="navbar navbar-default">
 			<div class="container">
 				<div class="navbar-header">
-					<a href="#" class="navbar-brand"></a>
+					<a href="#" class="navbar-brand">Sipper</a>
 				</div>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">1st Page</a></li>
+					<li><a href="#">2nd Page	</a></li>
+				</ul>
 			</div>
 		</nav>
 	</header>
+
+	<div class="container">
+		<div ng-controller="handleController" >
+			<p ng-controller="phraseController">This is my random phrase:{{phrase}} </p>
+			<label>What do you want ur sipper handle to be:</label>
+			<input type="text" ng-model="handle" />
+			<h4>You're Sipper handle will be: www.Sipper.com/{{handle}} </h4>
+		</div>
+	</div>
 </body>
 </html
