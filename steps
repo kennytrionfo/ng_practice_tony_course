@@ -106,30 +106,34 @@ Back in the phraseController, add another service/object called $timeout and use
 		}, 2000);
   }]);	
   rf and see. 
-  
-Set up routing by:
-Add a folder called pages with a main.html page and a second.html page
 
-Adding the ng-route dependency to the app to use to route urls to different pages:
-	In the html file add a script link to the angular router of choice (ie ng-route or ui route etc), linking it either to a file with the downloaded file or to the website like: 
+Set up routing by:
+Add a folder called pages with a first.html page and a second.html page
+
+Add the ng-route dependency to the app, to use to route urls to different pages:
+	In the html file add a script link to the angular router of choice (ie ng-route or ui-route etc), linking it either to a file with the downloaded file or to the website like: 
 	<script type="text/javascript" src="//code.angularjs.org/1.4.7/angular-route.min.js "></script>
+	or
+	<script type="text/javascript" src="../angular-route.min.js "></script>
+	or 
+	put it in bower foler using bower. 
 
 Tell the app that ur going to use this module which will be a dependency, by putting the dependency into the dependencies in the app: 
 	In ur js file:
 	var angularApp = angular.module('twinnerApp', ['ngRoute ']);	
 
 Use the .config method that ngRoute module provides and call it on the app and pass in the $routeProvider service? to the function: 
-	myApp.config(function($routeProvider) {
+	angularApp.config(function($routeProvider) {
 		
 	});
 
-?Make the homepage into 2 sections by putting in some col-md-6's on the twinner.html? 
+Make the homepage into 2 sections by putting in some col-md-6's on the twinner.html? 
 
-Now pass the ng-route function to the config method to connect two different URLs to two different controllers by useing the when method and passing in the url, a json object that has the key/value pairs of The templateUrl and the controller: 
-	myApp.config(function($routeProvider) {
+Now pass the $routeProvider function to the config method to connect two different URLs to two different controllers by useing the when method and passing in the url, a json object that has the key/value pairs of The templateUrl and the controller: 
+	angularApp.config(function($routeProvider) {
 		$routeProvider
 			.when('/',  {
-				templateUrl: 'pages/main.html', 
+				templateUrl: 'pages/first.html', 
 				controller: 'mainController'
 			}) 
 			.when('/second', {
@@ -138,16 +142,16 @@ Now pass the ng-route function to the config method to connect two different URL
 			})
 	});
 
-Create a second controller for the second .when method to connect to: 
-	myApp.controller('secondController', ['$scope', function ($scope) {
+Create a second controller (or a first and a second if needed) for the second .when method to connect to: 
+	angularApp.controller('secondController', ['$scope', function ($scope) {
  
 	}]);
 
-Add the '/' and the '/second' to the menu bar links:
+Add the '/' and the '/second' to the menu bar links in ur html for the nav in the header:
 	<li><a href="#/">The WHY</a></li>
 	<li><a href="#/second">Second Page</a></li>
 
-Go to / and see if Main show's up. 
+Go to / and see if first show's up. 
 
 Add a timer or something you'd lilke to see happen in the controllers to prove they're reaching the view if you want. 
 
