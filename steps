@@ -108,7 +108,7 @@ Back in the phraseController, add another service/object called $timeout and use
   rf and see. 
 
 Set up routing by:
-Add a folder called pages with a first.html page and a second.html page
+Add a folder called pages with a first.html page and a second.html page in it and put some html like "This is the first page" in it or something. 
 
 Add the ng-route dependency to the app, to use to route urls to different pages:
 	In the html file add a script link to the angular router of choice (ie ng-route or ui-route etc), linking it either to a file with the downloaded file or to the website like: 
@@ -151,9 +151,9 @@ Add the '/' and the '/second' to the menu bar links in ur html for the nav in th
 	<li><a href="#/">The WHY</a></li>
 	<li><a href="#/second">Second Page</a></li>
 
-Go to / and see if first show's up. 
+Go to / and /second and see if first show's up. 
 
-Add a timer or something you'd lilke to see happen in the controllers to prove they're reaching the view if you want. 
+Add a timer or something you'd like to see happen in the controllers to prove they're reaching the view if you want. 
 
 Pass ur URL a value using pattern matching: 
 

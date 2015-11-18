@@ -25,12 +25,17 @@
 	</header>
 
 	<div class="container">
-		<div ng-controller="handleController" >
-			<p ng-controller="phraseController">This is my random phrase:{{phrase}} </p>
+		<div class="col-md-6" ng-controller="handleController" >
+			<p ng-controller="phraseController">This left hand side is to enter ur sipper info. <br> 
+			This is my random phrase:{{phrase}} </p>
 			<label>What do you want ur sipper handle to be:</label>
 			<input type="text" ng-model="handle" />
 			<h4>You're Sipper handle will be: www.Sipper.com/{{handle}} </h4>
 		</div>
+		<div class="col-md-6" ng-view >
+		</div>
 	</div>
+
+
 </body>
 </html
