@@ -15,6 +15,10 @@ angularApp.controller('handleController', ['$scope', 'customService',  function 
 
 angularApp.controller('firstController', ['$scope', function ($scope) {
 	$scope.firstPageVarTest = "I know what a Prince and lover ought to be"
+	$scope.person = {
+		name: 'Fluffy Funnelcakes', 
+		address: '1212 Bigdog lane'
+	};
 }]);
 
 angularApp.controller('secondController', ['$scope', '$routeParams',  function ($scope, $routeParams) {
@@ -30,7 +34,7 @@ angularApp.service('customService', function() {
 /////////////////////////========DIRECTIVES=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
 angularApp.directive('searchResult', function() {
 	return {
-		template: '<a href="#" class="list-group-item "><h4 class="list-group-item-heading">Frankie Siddys</h4><p class="list-group-item-text">222 Main St., New York, NY 22222 </p></a>'
+		templateUrl: 'directives/search_result.html'
 	}
 });
 

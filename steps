@@ -68,8 +68,8 @@ Put a watcher on the var in the view by showing the randomPhrase var in the P el
 		<p ng-controller="stringController">This is my random phrase dude: {{randomPhrase}} </p>
 	</div>
 
-Bind an html element to a var in ur ng module by:
-First creating a label and input box under your P element asking for input of what they want their twiffer handle to be, as well as a little output diaglog like "Your twitter handle is ..." : 
+Bind an html element to a var in ur ng module:
+	by creating a label and input box under your P element asking for input of what they want their twiffer handle to be, as well as a little output diaglog like "Your twitter handle is ..." : 
   <div class="container">
     <div >
     	<p>This is my random Phrase: {{phrase}} </p>
@@ -222,23 +222,21 @@ Modularize your directive html code by putting it into a file in a folder and re
 	In that folder create a file called searchresult.html
 	Take the html contents from your custom 'searchResults' directive and put them into this new html file. 
 	In the object of the searchResult template, reference the new html in the new place by changing the template key to templateURL and make it's value the path to the new file like: 
-		templateURL: 'directives/searchResult.html'
+		templateURL: 'directives/search_result.html'
 		rf & check.
-Modularize the use of models by putting a new model 'Person' with a name and address property, in the handleController cuz that's the one that you're connecting/using with your main.html template/view which is where ur using your new 'search-result' directive. 
-		In ur handleController: 
-		person = {
+
+Modularize the use of models by putting a new model 'Person' with a name and address property, in the firstController cuz that's the one that you're connecting/using with your first.html template/view which is where ur using your new 'search-result' directive. 
+		In ur firstController: 
+		$scope.person = {
 			name: 'Fluffy Funnelcakes', 
 			address: '1212 Bigdog lane'
 		};
 
-		Then in searchResult directive object (which is now our searchResult.html file), interpolate the name and address property of the person object like: 
+		Then in searchResult directive object/html (which is now our search_result.html file), interpolate the name and address property of the person object like: 
 			<a href="#" class="list-group-item " ng-controller="stringController">
 				<h4 class="list-group-item-heading">{{person.name}} </h4>
 				<p class="list-group-item-text">{{person.address}} </p>
 			</a>		
-
-
-
 
 Refactor
 	Put in comments
