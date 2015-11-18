@@ -8,17 +8,31 @@ angularApp.controller('phraseController', ['$scope', '$timeout', function ($scop
 	}, 1000);
 }]);
 
-angularApp.controller('handleController', ['$scope', function ($scope ) {
+angularApp.controller('handleController', ['$scope', 'customService',  function ($scope, customService ) {
 	handle = '';
+	$scope.billybob = customService.customServiceVar;	
 }]);
 
 angularApp.controller('firstController', ['$scope', function ($scope) {
-
+	$scope.firstPageVarTest = "I know what a Prince and lover ought to be"
 }]);
 
-angularApp.controller('secondController', ['$scope', function ($scope) {
-
+angularApp.controller('secondController', ['$scope', '$routeParams',  function ($scope, $routeParams) {
+	$scope.secondPageVarTest = "I'm not gonna spend my life being a color.  "
+	$scope.num = $routeParams.num || 'No value yet' 
 }]);
+
+/////////////////////////========SERVICES=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
+angularApp.service('customService', function() {
+	this.customServiceVar = "I'm am the Funky Variable in the custom service";
+});
+
+/////////////////////////========DIRECTIVES=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
+angularApp.directive('searchResult', function() {
+	return {
+		template: '<a href="#" class="list-group-item "><h4 class="list-group-item-heading">Frankie Siddys</h4><p class="list-group-item-text">222 Main St., New York, NY 22222 </p></a>'
+	}
+});
 
 /////////////////////////========ROUTES=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
 angularApp.config(function($routeProvider) {
@@ -28,6 +42,10 @@ angularApp.config(function($routeProvider) {
 			controller: 'firstController'			
 		})
 		.when('/second', {
+			templateUrl: 'pages/second.html',
+			controller: 'secondController'
+		})
+		.when('/second/:num', {
 			templateUrl: 'pages/second.html',
 			controller: 'secondController'
 		});

@@ -26,11 +26,15 @@
 
 	<div class="container">
 		<div class="col-md-6" ng-controller="handleController" >
-			<p ng-controller="phraseController">This left hand side is to enter ur sipper info. <br> 
-			This is my random phrase:{{phrase}} </p>
+			<h3 ng-controller="phraseController">This left hand side is to enter ur sipper info. <br> <br>
+			This is my random phrase: <br>
+			{{phrase}} </h3>
 			<label>What do you want ur sipper handle to be:</label>
 			<input type="text" ng-model="handle" />
-			<h4>You're Sipper handle will be: www.Sipper.com/{{handle}} </h4>
+			<h4>You're Sipper handle will be: 
+			<br>www.Sipper.com/{{handle}} </h4>
+			<br>
+			<p>This is the var from the new service: {{billybob}} </p>
 		</div>
 		<div class="col-md-6" ng-view >
 		</div>
