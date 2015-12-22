@@ -8,15 +8,11 @@ Show the object in the view
 <!-- /////////////////////////========Twitter Project=======\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
 Create an html page with the UTF-8 charset metatag, a link element linking to ur minified bootstrap file or the CDN link and ur script elements to either a minified local file or a CDN link to anguar, jquery and ur js files in ur head element: 
 	<head>
-		<title>Twitter</title>
 		<meta charset="UTF-8">
-
-		<!-- load bootstrap and fontawesome via CDN (actually loading form the current directory. I downlaoded it. -) -->
-		<link rel="stylesheet" href="bootstrap.min.css" />
-
-		<!-- load angular via CDN (actually loading from the directory. I downloaded. -Kenny) -->
-		<script src="angular.min.js"></script>
-		<script src="twitter.js"></script>
+		<link rel="stylesheet" type="text/css" href="../bower_components/dist/css/bootstrap-theme.min.css">
+		<script type="text/javascript" src="../bower_components/angular/angular.min.js"> </script> 
+		<script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"> </script>
+		<script type="text/javascript" src="script.js
 	</head>
 
 Put in a Navbar:
@@ -51,7 +47,7 @@ Do some angular string interpolation by creating a basic controller in the angul
 
 Inject the service/object $scope into your controller: 
 	Should look like this: 
-	angularApp.controller('stringController', ['$scope', function ($scope ) {
+	angularApp.controller('phraseController', ['$scope', function ($scope ) {
   }]);
 
 Add a new object/var in the scope called phrase that is a randome phrase in a string: 
@@ -60,12 +56,12 @@ Add a new object/var in the scope called phrase that is a randome phrase in a st
 
 In ur P element in the html, add a directive that points to the phrase controller that you put in the angular module in the js file: 
 	<div class="container" >
-		<p ng-controller="stringController">This is my random phrase dude: </p>
+		<p ng-controller="phraseController">This is my random phrase dude: </p>
 	</div>
 
-Put a watcher on the var in the view by showing the randomPhrase var in the P element using string interpolation: 
+Put a watcher on the var in the view by showing the randomPhrase var in the P element using string interpolation. Refresh to see: 
 	<div class="container" >
-		<p ng-controller="stringController">This is my random phrase dude: {{randomPhrase}} </p>
+		<p ng-controller="phraseController">This is my random phrase dude: {{randomPhrase}} </p>
 	</div>
 
 Bind an html element to a var in ur ng module:
