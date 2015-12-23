@@ -13,6 +13,15 @@ angularApp.controller('handleController', ['$scope', function ($scope){
 	$scope.handle = '';
 }] );
 
+angularApp.controller('firstController', ['$scope', '$routeParams', function ($scope, $routeParams){
+	$scope.num = $routeParams.num || "No value yet!"
+}]);
+
+angularApp.controller('secondContoller', ['$scope', '$routeParams', function ($scope, $routeParams){
+
+}])
+
+
 /////////////////////////========Routing=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
 angularApp.config(function($routeProvider){
 		$routeProvider
