@@ -16,9 +16,13 @@ angularApp.controller('handleController', ['$scope', function ($scope){
 /////////////////////////========Routing=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
 angularApp.config(function($routeProvider){
 		$routeProvider
-				.when('/', {
+				.when('/first', {
 					templateUrl: 'pages/first.html',
-					controller: ''
+					controller: 'firstController'
+				})
+				.when('/second', {
+					templateUrl: 'pages/second.html',
+					controller: 'secondContoller'
 				})
 });
 

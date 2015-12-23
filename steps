@@ -128,7 +128,7 @@ Set up routing by:
 			$routeProvider
 				.when('/',  {
 					templateUrl: 'pages/first.html', 
-					controller: 'mainController'
+					controller: 'firstController'
 				}) 
 				.when('/second', {
 					templateUrl: 'pages/second.html'
