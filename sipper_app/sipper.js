@@ -8,7 +8,7 @@ angularApp.controller('phraseController', ['$scope', '$timeout', function ($scop
 	}, 1000);
 }]);
 
-angularApp.controller('handleController', ['$scope', 'customService',  function ($scope, customService ) {
+angularApp.controller(' handleController', ['$scope', 'customService',  function ($scope, customService ) {
 	handle = '';
 	$scope.billybob = customService.customServiceVar;	
 }]);

@@ -81,22 +81,20 @@ Create a var/model called 'handle' that's an empty string in a new controller ca
 		$scope.handle = ' ';
 	}]);
 
-Add a ng-controller directive to the html element that your going to get the user's input in: 
-	 Like maybe in the input element: 
-   <input type="text" ng-controller="handleController" ng-model="handle" />
-   or the container div that it's in:
+Add a ng-controller directive to the html element contains both the element that that your going to get the user's input in and the one that you will output it in: 
+	 Like maybe in the container div that it's in:
    <div ng-controller="handleController">
 
 Add a directive to the Input element in ur html to bind the input to the handle var/model in new handleController: 
 	In the same div: 
-	<input type="text" ng-model="handle"/>
+   <input type="text" ng-model="handle" />
 
 Put the string interpolated reference to the new var/model/object 'handle' in the html and test. Should see. 
 	After ur www.twiffer.com/: 
 	<h4>www.twiffer.com/ {{handle}} </h4>
 
 Back in the phraseController, add another service/object called $timeout and use it in the controller by passing it a function that changes the string content of the phraseController var to something else after two seconds: 
-	angularApp.controller('mainController', ['$scope', '$timeout',  function('$scope', '$timeout' ) {
+	angularApp.controller('phraseController', ['$scope', '$timeout',  function('$scope', '$timeout' ) {
 		$timeout(function() {
 			$scope.phrase = 'Willy Wonka';
 		}, 2000);

@@ -7,6 +7,7 @@
 	<script type="text/javascript" src="../bower_components/angular/angular.min.js"> </script> 
 	<script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"> </script>
 	<script type="text/javascript" src="script.js"> </script>
+	<script type="text/javascript" src="//code.angularjs.org/1.4.7/angular-route.min.js"> </script>
 </head>
 	<header>
 		<nav class="navbar navbar-default" >
@@ -23,8 +24,12 @@
 	</header>
 <body> 
 	<div class="container"  >
-		<div  >
+		<div ng-controller="handleController" >
 			<p ng-controller="phraseController" >This is my random phrase: {{randomPhrase}} </p>
+			<label>What do you want ur wipper handle to be?</label>
+			<input type="text"  ng-model="handle" />
+			<h2>Your Wipper Handle is:  </h2>
+			<h2 >Wipper.com/ {{handle}}</h2>
 		</div>
 	</div>
 
