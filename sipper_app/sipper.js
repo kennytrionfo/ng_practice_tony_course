@@ -8,7 +8,7 @@ angularApp.controller('phraseController', ['$scope', '$timeout', function ($scop
 	}, 1000);
 }]);
 
-angularApp.controller(' handleController', ['$scope', 'customService',  function ($scope, customService ) {
+angularApp.controller('handleController', ['$scope', 'customService',  function ($scope, customService ) {
 	handle = '';
 	$scope.billybob = customService.customServiceVar;	
 }]);
@@ -43,7 +43,7 @@ angularApp.config(function($routeProvider) {
 	$routeProvider
 		.when('/', {
 			templateUrl: 'pages/first.html', 
-			controller: 'firstController'			
+			fcontroller: 'firstController'			
 		})
 		.when('/second', {
 			templateUrl: 'pages/second.html',
