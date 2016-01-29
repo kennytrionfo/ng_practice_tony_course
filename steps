@@ -101,6 +101,40 @@ Back in the phraseController, add another service/object called $timeout and use
   }]);	
   rf and see. 
 
+Filter the text in the output of the twitter handle to all be uppercase:
+	Add the $filter service that comes with angular into the controller. 
+	Create a function in the controller that turns the handle property on scope all uppercase. 
+	Interpolate the new function call in the html. 
+	Controller should look like this: 
+			$scope.lowercasehandle = function(){
+			return $filter('uppercase')($scope.handle);
+		};
+	Then html should have {{ lowercasehandle() }} in it. 
+
+Put a requirement on the handle, that it has to be exactly 5 characters: 
+	Add a new var to the scope called characters: 
+		$scope.characters = 5;
+	Add a bootstrap Alert div to the html with the text 'Must be 5 characters' in it and put the ng-if directive in it passing in a boolean to show when the characters in the text box Don't equal 5: 
+		<div class="alert "  ng-if="handle.length !== characters" >
+			Must be 5 characters.
+		</div>
+
+Show a different bootstrap class when the input text is less than 5 characters and when it's more than 5: 
+	Use the ng-class directive: 
+	ng-class="{'alert-warning':handle.length < characters, 'alert-danger':handle.length > characters } "
+
+Show a different message depending on how many characters are in the input box: 
+	Put two new divs around your messages each with and ng-show directive: 
+			<div ng-show="handle.length < characters "  >
+				You don't have 5 characters yet!
+			</div>
+			<div ng-show="handle.length > characters" >
+				You have TOO MANY characters!
+			</div>
+Add a button that shows an alert when clicked using ng-click: 
+	In html: 
+		
+
 Set up routing by:
 	Add a folder called pages with a first.html page and a second.html page in it and put some html like "This is the first page" in it or something. 
 

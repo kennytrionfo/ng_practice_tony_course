@@ -10,8 +10,12 @@
 		}, 2000);
 	});
 
-	function HandleCtrl($scope){
-		$scope.handle = ""
+	function HandleCtrl($scope, $filter){
+		$scope.handle = "";
+		$scope.lowercasehandle = function(){
+			return $filter('uppercase')($scope.handle);
+		};
+		$scope.characters = 5;
 	}
 	app.controller('HandleCtrl', HandleCtrl);
 

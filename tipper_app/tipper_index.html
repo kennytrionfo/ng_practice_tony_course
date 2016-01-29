@@ -28,7 +28,15 @@
 	<hr>
 	<div class="container " ng-controller="HandleCtrl" >
 		Input here what you'd like ur Tipper Handle to be: <input type="text" ng-model="handle"/>
-		<p>Your Tipper Handle will be: {{handle}} </p>
+		<div class="alert "  ng-if="handle.length !== characters" ng-class="{'alert-warning':handle.length < characters, 'alert-danger':handle.length > characters } " >
+			<div ng-show="handle.length < characters "  >
+				You don't have 5 characters yet!
+			</div>
+			<div ng-show="handle.length > characters" >
+				You have TOO MANY characters!
+			</div>
+		</div>
+		<h4>Your Tipper Handle will be:</h4> <h3> www.tipper://{{lowercasehandle()}} </h3>
 	</div>
 </body>
 </html>
