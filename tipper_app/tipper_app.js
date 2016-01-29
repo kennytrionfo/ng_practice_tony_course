@@ -16,6 +16,9 @@
 			return $filter('uppercase')($scope.handle);
 		};
 		$scope.characters = 5;
+		$scope.alertClick = function(){
+			alert("Hey there!");
+		};
 	}
 	app.controller('HandleCtrl', HandleCtrl);
 
