@@ -21,17 +21,17 @@
 		};
 
 ///////////////========This was trying to use $http Service. Couldn't get to work=======\\\\\\\\\\\\\\\\\
-		$scope.data = $http.get('data.json')
-			.success(function(result){
-				return result;
-			})
-			.error(function(data, error){
-				console.log(data );
-			})
-		console.log($scope.data );
+		// $scope.data = $http.get('data.json')
+		// 	.success(function(result){
+		// 		return result;
+		// 	})
+		// 	.error(function(data, error){
+		// 		console.log(data );
+		// 	})
+		// console.log($scope.data );
 /////////////////////////========End of $http Service stuff=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
 		$scope.fakeData = $resource('data.json').get().$promise.then(function(data){
-			$scope.names = data;
+			$scope.names = data.records;
 		})
 		console.log($scope.fakeData );
 

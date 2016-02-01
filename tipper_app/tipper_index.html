@@ -40,6 +40,13 @@
 		<h4>Your Tipper Handle will be:</h4> <h3> www.tipper://{{lowercasehandle()}} </h3>
 		<br>
 		<input type="button" value="click me dude" ng-click="alertClick()" />
+		<hr>
+		<h4>Rules:</h4>
+		<ul>
+			<li ng-repeat="name in names" >
+				{{name.Name}}
+			</li>
+		</ul>
 	</div>
 </body>
 </html>
