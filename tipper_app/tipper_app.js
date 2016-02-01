@@ -1,6 +1,18 @@
 (function(){
 
-	var app = angular.module('tipperApp', ['ngResource']);
+	var app = angular.module('tipperApp', ['ngResource', 'ngRoute']);
+/////////////////////////========ROUTES=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	app.config(function($routeProvider){
+		$routeProvider
+			.when('/', {
+				templateUrl: 'pages/first.html',
+				controller: 'FirstCtrl'
+			})
+			.when('/second', {
+				templateUrl: 'pages/second.html',
+				controller: 'SecondCtrl'
+			})		
+	})
 
 /////////////////////////========CONTROLLERS=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
 	app.controller('PhraseCtrl', function($scope, $timeout ){
