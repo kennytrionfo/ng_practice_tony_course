@@ -1,10 +1,12 @@
-[
-	{
-		"Name":"Subin", 
-		"Age":"252"
-	},
-	{
-		"Name":"Kinii",
-		"Age":"324"
-	}
-]
+{
+	"records":[
+		{
+			"Name":"Subin", 
+			"Age":"252"
+		},
+		{
+			"Name":"Kinii",
+			"Age":"324"
+		}
+	]
+}

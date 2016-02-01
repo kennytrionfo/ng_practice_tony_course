@@ -30,7 +30,7 @@
 			})
 		console.log($scope.data );
 /////////////////////////========End of $http Service stuff=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
-		$scope.fakeData = $resource('data.json').get().promise.then(function(data){
+		$scope.fakeData = $resource('data.json').get().$promise.then(function(data){
 			$scope.names = data;
 		})
 		console.log($scope.fakeData );
