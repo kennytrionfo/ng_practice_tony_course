@@ -32,8 +32,8 @@
 /////////////////////////========End of $http Service stuff=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
 		$scope.fakeData = $resource('data.json').get().$promise.then(function(data){
 			$scope.names = data.records;
+			// console.log($scope.names );
 		})
-		console.log($scope.fakeData );
 
 	}
 	app.controller('HandleCtrl', HandleCtrl);

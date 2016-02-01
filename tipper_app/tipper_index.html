@@ -41,12 +41,22 @@
 		<br>
 		<input type="button" value="click me dude" ng-click="alertClick()" />
 		<hr>
-		<h4>Rules:</h4>
-		<ul>
-			<li ng-repeat="name in names" >
-				{{name.Name}}
-			</li>
-		</ul>
+
+		<table >
+			<tr>
+				<th>Names: </th>
+				<th>Ages:</th>
+			</tr>
+			<tr>
+				<td >
+					<li ng-repeat="name in names"> {{name.Name}} </li>
+				<td>
+				<td>
+					<li ng-repeat="name in names" > {{name.Age}}</li>  
+				</td>
+			</tr>
+		</table>
+
 	</div>
 </body>
 </html>
