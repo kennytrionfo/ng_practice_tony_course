@@ -15,11 +15,11 @@
 		<nav class="navbar navbar-default " style="background: darkblue"  >
 			<div class="container " style="background:darkorange" >
 					<div class="navbar-header "  >
-							<a href="" class="navbar-brand " >Tipper</a>
+							<a href="#" class="navbar-brand " >Tipper</a>
 					</div>
 					<ul class="nav navbar-nav navbar-right " >
-						<li><a href="">One</a></li>
-						<li><a href="">Two</a></li>
+						<li><a href="#/">One</a></li>
+						<li><a href="#/second">Two</a></li>
 					</ul>
 			</div>
 		</nav>
@@ -28,37 +28,42 @@
 		<p ng-model="phrase" >This is my random phrase: "{{phrase}} </p>
 	</div>
 	<hr>
-	<div class="col-md-6" class="container " ng-controller="HandleCtrl" style="background:pink" >
-		Input here what you'd like ur Tipper Handle to be: <input type="text" ng-model="handle"/>
-		<div class="alert "  ng-if="handle.length !== characters" ng-class="{'alert-warning':handle.length < characters, 'alert-danger':handle.length > characters } " >
-			<div ng-show="handle.length < characters "  >
-				You don't have 5 characters yet!
+	<div class="container " style="background:red" >
+		<div class="col-md-6" ng-controller="HandleCtrl" style="background:pink" >
+			Input here what you'd like ur Tipper Handle to be: <input type="text" ng-model="handle"/>
+			<div class="alert "  ng-if="handle.length !== characters" ng-class="{'alert-warning':handle.length < characters, 'alert-danger':handle.length > characters } " >
+				<div ng-show="handle.length < characters "  >
+					You don't have 5 characters yet!
+				</div>
+				<div ng-show="handle.length > characters" >
+					You have TOO MANY characters!
+				</div>
 			</div>
-			<div ng-show="handle.length > characters" >
-				You have TOO MANY characters!
-			</div>
+			<h4>Your Tipper Handle will be:</h4> <h3> www.tipper://{{lowercasehandle()}} </h3>
+			<br>
 		</div>
-		<h4>Your Tipper Handle will be:</h4> <h3> www.tipper://{{lowercasehandle()}} </h3>
-		<br>
-	</div>
-	<div class="col-md-6" style="background:lightgreen" ng-controller="HandleCtrl	">
-		<input type="button" value="click me dude" ng-click="alertClick()" />
-		<hr>
+		<div class="col-md-6" style="background:lightgreen" ng-controller="HandleCtrl	">
+			<input type="button" value="click me dude" ng-click="alertClick()" />
+			<hr>
 
-		<table >
-			<tr>
-				<th>Names: </th>
-				<th>Ages:</th>
-			</tr>
-			<tr>
-				<td >
-					<li ng-repeat="name in names"> {{name.Name}} </li>
-				<td>
-				<td>
-					<li ng-repeat="name in names" > {{name.Age}}</li>  
-				</td>
-			</tr>
-		</table>
+			<table >
+				<tr>
+					<th>Names: </th>
+					<th>Ages:</th>
+				</tr>
+				<tr>
+					<td >
+						<li ng-repeat="name in names"> {{name.Name}} </li>
+					<td>
+					<td>
+						<li ng-repeat="name in names" > {{name.Age}}</li>  
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<hr>
+	<div class="container "  ng-view >
 	</div>
 
 </body>

@@ -1,6 +1,7 @@
 (function(){
 
 	var app = angular.module('tipperApp', ['ngResource', 'ngRoute']);
+
 /////////////////////////========ROUTES=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
 	app.config(function($routeProvider){
 		$routeProvider
@@ -15,6 +16,14 @@
 	})
 
 /////////////////////////========CONTROLLERS=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	app.controller('FirstCtrl', ['$scope', '$timeout',  function($scope, $timeout){
+
+	}]);
+
+	app.controller('SecondCtrl', ['$scope',  function($scope){
+
+	}]);
+
 	app.controller('PhraseCtrl', function($scope, $timeout ){
 		$scope.phrase = "I'm a random phrase";
 		$timeout(function(){
