@@ -216,8 +216,6 @@ Set up routing by:
 
 	You may want to divide up the page at this point to put the 1st and 2nd page stuff on the right side or something. 
 
-	Add a timer or something you'd like to see happen in the controllers to prove they're reaching the view if you want. 
-
 Give a page a specific value by passing the URL a value using pattern matching: 
 	In ur config method where ur doing ur routing, create a third route but add :num to the end of the /second url: 
 		.when('/second/:num', {

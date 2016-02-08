@@ -13,6 +13,10 @@
 				templateUrl: 'pages/second.html',
 				controller: 'SecondCtrl'
 			})		
+			.when('/second/:num', {
+				templateUrl: 'pages/second.html',
+				controller: 'SecondCtrl'
+			})		
 	})
 
 /////////////////////////========CONTROLLERS=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -20,8 +24,8 @@
 
 	}]);
 
-	app.controller('SecondCtrl', ['$scope',  function($scope){
-
+	app.controller('SecondCtrl', ['$scope', '$routeParams',  function($scope, $routeParams){
+		$scope.num = $routeParams.num || 'no value yet'
 	}]);
 
 	app.controller('PhraseCtrl', function($scope, $timeout ){
