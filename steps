@@ -145,7 +145,28 @@ Display a list of items from a json object in another .json file using the ngRes
 	Insert $resource service into your controller:
 	Create a data.json file in the same directory with a json object in it with some data in it. 
 	Create a new property on ur scope in the controller that gives you access to the records in the json file.
+		$scope.fakeData = $resource('data.json').get().$promise.then(function(data){
+			$scope.names = data.records;
+			// console.log($scope.names );
+		})
 	Create a list or a table and use ng-repeate directive to repeate items in the data. 
+		Something like: 
+		<div class="col-md-6" style="background:lightgreen" ng-controller="HandleCtrl	">
+			<table >
+				<tr>
+					<th>Names: </th>
+					<th>Ages:</th>
+				</tr>
+				<tr>
+					<td >
+						<li ng-repeat="name in names"> {{name.Name}} </li>
+					<td>
+					<td>
+						<li ng-repeat="name in names" > {{name.Age}}</li>  
+					</td>
+				</tr>
+			</table>
+		</div>		
 
 Set up routing by:
 	Add a folder called pages with a first.html page and a second.html page in it and put some html like "This is the first page" in it or something. 
