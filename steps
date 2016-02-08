@@ -304,8 +304,13 @@ Move the model from the controller to the diretive by isolating the scope in you
 
 		}
 	Poke holes in the wall of the scope by putting custom attributes on the html element for the custom directive: 
-		Create a key in the scope object with whatever name you want with the value of "@" to pass the person.name text through like: 
+		Create a key in the scope object with whatever name you want with the value of "@" to pass the person.name text through to the html like: 
 			personName: "@"
+		Put the normalized js object name with the interpolated model and property you want access to as a direcitve from the scope as an attribute of the element in the html you will be interpolating the model into like: 
+			person-name=" {{person.name}} "
+		In the search_result.html or whatever directive html partial ur using, change out the interpolated model from the exact model name and property like 'person.name' to the one normalized attribute name in the element we just changed like: 
+			<h4 class="list-group-item-heading"> {{personName}} </h4>
+
 
 Refactor
 	Put in any comments that may be needed in the app. 
