@@ -298,6 +298,14 @@ Modularize the use of models by putting a new model 'Person' with a name and add
 				<h4 class="list-group-item-heading">{{person.name}} </h4>
 				<p class="list-group-item-text">{{person.address}} </p>
 			</a>		
+Move the model from the controller to the diretive by isolating the scope in your directive so the model can't affect anything on it's parent page (or so the scope in the directive can't touch the scope in the controller):
+	Add the scope property with an empty js object to ur directive like: 
+		scope: {
+
+		}
+	Poke holes in the wall of the scope by putting custom attributes on the html element for the custom directive: 
+		Create a key in the scope object with whatever name you want with the value of "@" to pass the person.name text through like: 
+			personName: "@"
 
 Refactor
 	Put in any comments that may be needed in the app. 

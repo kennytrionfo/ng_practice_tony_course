@@ -76,7 +76,11 @@
 	app.directive('searchResult', function(){
 		return {
 			templateUrl : 'directives/search_result.html', 
-			replace : true 
+			replace : true, 
+			scope: {
+				personName: "@",
+				prettyBoy: "@"
+			} 
 		}
 	});
 
