@@ -247,7 +247,9 @@ Create a custom service called customService by
 	Put the new controller var into a view that's tied to that controller: 
 	<div ng-controller="handleController" >
 	<p> {{billybob}} </p>
- 
+
+Create a CUSTOM DIRECTIVE:
+By first creating a block of html for a search area: 
 Put a little search area on the page with a search label, an input box and search results listing using bootstrap list item, custom content html:
 	<label>Search for a Customer:</label><input type="text" />
 	<br><br>

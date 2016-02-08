@@ -35,7 +35,7 @@
 		}, 2000);
 	});
 
-	function HandleCtrl($scope, $filter, $http, $resource){
+	function HandleCtrl($scope, $filter, $http, $resource, customService){
 		$scope.handle = "";
 		$scope.lowercasehandle = function(){
 			return $filter('uppercase')($scope.handle);
@@ -44,6 +44,7 @@
 		$scope.alertClick = function(){
 			alert("Hey there!");
 		};
+		$scope.newServiceVar = customService.customServiceVar
 
 ///////////////========This was trying to use $http Service. Couldn't get to work=======\\\\\\\\\\\\\\\\\
 		// $scope.data = $http.get('data.json')
@@ -63,5 +64,20 @@
 	}
 	app.controller('HandleCtrl', HandleCtrl);
 
+/////////////////////////========SERVICES:=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	app.service('customService', function(){
+		this.customServiceVar = "I'm a funky property in the custom service"
+	});
+
+/////////////////////////========DIRECTIVES:=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	app.directive('searchResult', function{
+		return {
+			template : 
+			'<a href="#" class="list-group-item ">
+	    	<h4 class="list-group-item-heading">Frankie Jibbs</h4>
+	    	<p class="list-group-item-text">222 Main St., New York, NY 22222 </p>
+	  	</a>'
+		}
+	});
 
 })();
