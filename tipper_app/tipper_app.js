@@ -21,7 +21,10 @@
 
 /////////////////////////========CONTROLLERS=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
 	app.controller('FirstCtrl', ['$scope', '$timeout',  function($scope, $timeout){
-
+		$scope.person = {
+			name : "Fluffles", 
+			address : "15 biddie drive"
+		};
 	}]);
 
 	app.controller('SecondCtrl', ['$scope', '$routeParams',  function($scope, $routeParams){
@@ -70,13 +73,10 @@
 	});
 
 /////////////////////////========DIRECTIVES:=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
-	app.directive('searchResult', function{
+	app.directive('searchResult', function(){
 		return {
-			template : 
-			'<a href="#" class="list-group-item ">
-	    	<h4 class="list-group-item-heading">Frankie Jibbs</h4>
-	    	<p class="list-group-item-text">222 Main St., New York, NY 22222 </p>
-	  	</a>'
+			templateUrl : 'directives/search_result.html', 
+			replace : true 
 		}
 	});
 

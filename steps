@@ -300,10 +300,11 @@ Modularize the use of models by putting a new model 'Person' with a name and add
 			</a>		
 
 Refactor
-	Put in comments
+	Put in any comments that may be needed in the app. 
 	Modularize by putting like types of code etc into groups within the same file or separate files. 
 	DRY it out by reducing the total lines of code as much as poss. 
 
+----End----
 
 
 
