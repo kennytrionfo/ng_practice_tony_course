@@ -311,6 +311,19 @@ Move the model from the controller to the diretive by isolating the scope in you
 		In the search_result.html or whatever directive html partial ur using, change out the interpolated model from the exact model name and property like 'person.name' to the one normalized attribute name in the element we just changed like: 
 			<h4 class="list-group-item-heading"> {{personName}} </h4>
 
+Insert plain text into ur directive partial html using the transclude key/object? in the directive: 
+	Insert some text into the 'search-result' 
+		<search-result person-name=" {{person.name}} " pretty-boy="{{person.address}} " >*Search results may not be valid.</search-result>
+	Put the ng-transclude element in a small element where you want it in ur html partial: 
+		Like this for example: 
+			<a href="#" class="list-group-item ">
+				<h4 class="list-group-item-heading"> {{personName}} </h4>
+				<small><ng-transclude></ng-transclude></small>
+				<p class="list-group-item-text"> {{prettyBoy}} </p>
+			</a>
+	Add the transclude key/value pair to the directive options like: 
+		transclude: true 
+
 
 Refactor
 	Put in any comments that may be needed in the app. 
