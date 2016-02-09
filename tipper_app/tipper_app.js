@@ -80,7 +80,8 @@
 			scope: {
 				personName: "@",
 				prettyBoy: "@"
-			} 
+			},
+			transclude: true 
 		}
 	});
 
