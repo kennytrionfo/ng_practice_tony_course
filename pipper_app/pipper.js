@@ -23,11 +23,11 @@ var angularApp = angular.module('pipperApp', ['ngRoute']);
 
 	angularApp.controller('searchCtrl', ['$scope', function ($scope) {
 		$scope.chilchil = "chill chill dude.";
+		$scope.title = "";
 		$scope.person = {
 			name: 'Fuffy Funnelcakes',
 			address: '333 Funky House Lane'
 		};
-		$scope.person.name = "name";
 	}]);
 
 

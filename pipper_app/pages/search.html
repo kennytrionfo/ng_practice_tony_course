@@ -1,7 +1,10 @@
 <h2>Search Page</h2>
 
 <label>Search for a Customer:</label><input type="text" />
-<label>Input Name here: </label><input type="text" ng-model="name" />
+<br>
+<label>Input Name here: </label><input type="text" ng-model="title" ng-controller="searchCtrl" />
+<br>
+Your title will be: <p ng-controller="searchCtrl" > {{title}} </p>
 <br><br>
 <div class="list-group">
 <!-- 	<a href="" class="list-group-item ">
