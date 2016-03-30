@@ -38,6 +38,10 @@ var angularApp = angular.module('pipperApp', ['ngRoute']);
 /////////////////////////========Routes=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
 	angularApp.config(function($routeProvider) {
 		$routeProvider
+			.when('/',  {
+				templateUrl: 'pages/home.html', 
+				controller: 'phraseCtrl'
+			}) 
 			.when('/first',  {
 				templateUrl: 'pages/first.html', 
 				controller: 'firstCtrl'

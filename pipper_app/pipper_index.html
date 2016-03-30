@@ -16,7 +16,7 @@
 		<nav class="navbar navbar-default">
 			<div class="container">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="#">twittister</a>
+					<a class="navbar-brand" href="#/">twittister</a>
 				</div>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#/">Home</a></li>
@@ -27,17 +27,7 @@
 			</div>
 		</nav>
 	</header>
-	<div class="container" >
-		<div ng-controller="handleCtrl" class="col-md-6 "  >
-			<p ng-controller="phraseCtrl" >This is my random phrase: {{phrase}} </p>
-			<br>
-			<label>What do you want ur Pipper handle to be?</label>
-			<input type="text" ng-model="handle" >	</input> <br>
-			You're Pipper handle is: 
-			<h3>www.pipper.com/ {{handle}} </h3>
-		</div>
-		<div class="col-md-6" ng-view >
-		</div>
+	<div class="container" ng-view >
 	</div>
 
 </body>
