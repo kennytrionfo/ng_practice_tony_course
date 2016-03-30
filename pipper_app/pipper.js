@@ -27,6 +27,7 @@ var angularApp = angular.module('pipperApp', ['ngRoute']);
 			name: 'Fuffy Funnelcakes',
 			address: '333 Funky House Lane'
 		};
+		$scope.person.name = "name";
 	}]);
 
 
@@ -45,7 +46,6 @@ var angularApp = angular.module('pipperApp', ['ngRoute']);
 			.when('/',  {
 				templateUrl: 'pages/home.html', 
 				// controller: 'handleCtrl' 
-
 			}) 
 			.when('/first',  {
 				templateUrl: 'pages/first.html', 
