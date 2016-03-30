@@ -291,7 +291,7 @@ Modularize your directive html code by putting it into a file in a folder and re
 	In that folder create a file called searchresult.html
 	Take the html contents from your custom 'searchResults' directive and put them into this new html file. 
 	In the object of the searchResult template, reference the new html in the new place by changing the template key to templateURL and make it's value the path to the new file like: 
-		templateURL: 'directives/search_result.html'
+		templateURL: 'directives/searchresult.html'
 		rf & check.
 
 Modularize the use of models by putting a new model 'Person' with a name and address property, in the firstController cuz that's the one that you're connecting/using with your first.html template/view which is where ur using your new 'search-result' directive. 
