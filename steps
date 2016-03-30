@@ -272,7 +272,7 @@ Create a custom directive by converting the bootstrap search results html above 
 	 	In ur js file, attach a directive to the angularApp called 'searchResult' and give it a function that returns an object (the directive), with a template property (This is the html from the first page and that is the html that gets outputted when this directive is used). 
 		angularApp.directive('searchResult', function() {
 			return {
-				template: '<a href="#" class="list-group-item "><h4 class="list-group-item-heading">Frankie Siddys</h4><p class="list-group-item-text">222 Main St., New York, NY 22222 </p></a>'
+				template: '<a href="" class="list-group-item "><h4 class="list-group-item-heading">Frankie Siddys</h4><p class="list-group-item-text">222 Main St., New York, NY 22222 </p></a>'
 			}
 		});
 	 	Now get rid of the original 'search results' html in the first view and replace with your new directive normalizing the camelcase name of it to dashes. 

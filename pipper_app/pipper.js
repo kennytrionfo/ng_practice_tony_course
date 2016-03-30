@@ -40,7 +40,7 @@ var angularApp = angular.module('pipperApp', ['ngRoute']);
 		$routeProvider
 			.when('/',  {
 				templateUrl: 'pages/home.html', 
-				controller: 'phraseCtrl'
+				// controller: 'handleCtrl'
 			}) 
 			.when('/first',  {
 				templateUrl: 'pages/first.html', 
@@ -53,9 +53,15 @@ var angularApp = angular.module('pipperApp', ['ngRoute']);
 			.when('/search', {
 				templateUrl: 'pages/search.html',
 				controller: 'searchCtrl'
-			})
+			});
 	});
 
+/////////////////////////========Directives=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	angularApp.directive('searchResult', function() {
+		return {
+			template: '<a href="" class="list-group-item "><h4 class="list-group-item-heading">Frankie Siddys</h4><p class="list-group-item-text">222 Main St., New York, NY 22222 </p></a>'
+		};
+	});
 
 
 
