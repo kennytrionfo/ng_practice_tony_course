@@ -1,16 +1,16 @@
 <h2>Search Page</h2>
-
-<label>Search for a Customer:</label><input type="text" />
-<br>
-<label>Input Name here: </label><input type="text" ng-model="title" ng-controller="searchCtrl" />
-<br>
-Your title will be: <p ng-controller="searchCtrl" > {{title}} </p>
-<br><br>
-<div class="list-group">
-<!-- 	<a href="" class="list-group-item ">
-    <h4 class="list-group-item-heading">Frankie Jibbs</h4>
-    <p class="list-group-item-text">222 Main St., New York, NY 22222 </p>
-  </a> -->
-  <search-result></search-result>
-  <div search-result2 ></div>
+<div ng-controller="searchCtrl" >
+	<label>Search for a Customer:</label><input type="text" />
+	<br>
+	<label>Input Title here: </label><input type="text" ng-model="title"  ></input>
+	<br>
+	<p  >Your title will be: {{title}} </p>
+	<div class="list-group">
+	<!-- 	<a href="" class="list-group-item ">
+	    <h4 class="list-group-item-heading">Frankie Jibbs</h4>
+	    <p class="list-group-item-text">222 Main St., New York, NY 22222 </p>
+	  </a> -->
+	  <search-result></search-result>
+	  <div search-result2 ></div>
+	</div>
 </div>
