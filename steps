@@ -281,7 +281,9 @@ Create a custom directive by converting the bootstrap search results html above 
 	 		
 	 		Add a 2nd or 3rd to the first one and try using a different formate like: 
 			<search-result></search-result>
+			or
 			<div search-result ></div>			  
+			or
 			<search-result></search-result>
 
 	 		Add the 'replace:true' property on ur directive's object, rf and rendered html should be just the directive's html and u shouldn't see the angular <search-result> element anymore in the pages loaded html if you check in inspect element. 
