@@ -40,7 +40,8 @@ var angularApp = angular.module('pipperApp', ['ngRoute']);
 		$routeProvider
 			.when('/',  {
 				templateUrl: 'pages/home.html', 
-				// controller: 'handleCtrl'
+				// controller: 'handleCtrl' 
+
 			}) 
 			.when('/first',  {
 				templateUrl: 'pages/first.html', 
@@ -60,6 +61,11 @@ var angularApp = angular.module('pipperApp', ['ngRoute']);
 	angularApp.directive('searchResult', function() {
 		return {
 			template: '<a href="" class="list-group-item "><h4 class="list-group-item-heading">Frankie Siddys</h4><p class="list-group-item-text">222 Main St., New York, NY 22222 </p></a>'
+		};
+	});
+	angularApp.directive('searchResult2', function() {
+		return {
+			template: '<a href="" class="list-group-item "><h4 class="list-group-item-heading">Sidney Siddys</h4><p class="list-group-item-text">555 Main St., New York, NY 55555 </p></a>'
 		};
 	});
 
