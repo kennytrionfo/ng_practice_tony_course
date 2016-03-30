@@ -21,13 +21,18 @@ var angularApp = angular.module('pipperApp', ['ngRoute']);
 		$scope.freddie = anotherService.anotherServiceVar;
 	}]);
 
+	angularApp.controller('searchCtrl', ['$scope', function ($scope) {
+		$scope.chilchil = "chill chill dude.";
+	}]);
+
+
 /////////////////////////========Services=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
 	angularApp.service('customService', function() {
 		this.customServiceVar = "I'm a customServiceVar!";
 	});
 
 	angularApp.service('anotherService', function() {
-		this.anotherServiceVar = "I'm the Var from the anotherService Service. yeah. . "
+		this.anotherServiceVar = "I'm the Var from the anotherService Service. yeah. . ";
 	});
 
 /////////////////////////========Routes=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -40,7 +45,11 @@ var angularApp = angular.module('pipperApp', ['ngRoute']);
 			.when('/second', {
 				templateUrl: 'pages/second.html',
 				controller: 'secondCtrl'
-			});
+			})
+			.when('/search', {
+				templateUrl: 'pages/search.html',
+				controller: 'searchCtrl'
+			})
 	});
 
 
