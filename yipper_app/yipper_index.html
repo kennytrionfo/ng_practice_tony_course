@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="yipperApp">
 <head>
 	<title>Yipper</title>
 	<!-- /////////////////////////========META LINKS=======\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
@@ -12,6 +12,26 @@
 
 </head>
 <body>
+	<header>
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">twittister</a>
+				</div>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">The WHY</a></li>
+					<li><a href="#">2nd Menu</a></li>
+					<li><a href="#">3rd Menu</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<div class="container " ng-controller="PhraseCtrl" >
+		<div  >
+			<p >This is my random phrase: {{randomPhrase}} </p>
+		</div>
+	</div>
 
 </body>
 </html>
