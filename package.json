@@ -1,0 +1,28 @@
+{
+  "name": "tony_course",
+  "version": "1.0.0",
+  "description": "angular practice",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^1.0.0"
+  },
+  "devDependencies": {
+    "connect-livereload": "^0.5.4",
+    "grunt-contrib-connect": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kennytrionfo/ng_practice_tony_course.git"
+  },
+  "author": "kennyT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kennytrionfo/ng_practice_tony_course/issues"
+  },
+  "homepage": "https://github.com/kennytrionfo/ng_practice_tony_course#readme"
+}

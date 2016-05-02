@@ -12,7 +12,7 @@ Create an html page with
 	ur script elements to either a minified local file or a CDN link to anguar, jquery and ur js files in ur head element: 
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="../bower_components/dist/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
 		<script type="text/javascript" src="../bower_components/angular/angular.min.js"> </script> 
 		<script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"> </script>
 		<script type="text/javascript" src="script.js" ></script>
@@ -47,6 +47,11 @@ Add to html a containter div with another plain div in it with a p element in it
 Do some angular string interpolation by creating a basic controller in the angular module of the js file with the name of 'phrase': 
 	angularApp.controller('phraseController', function() {
 	});
+	or can use this syntax that James likes: 
+	function phraseCtrl(){
+
+	app.controller('phraseCtrl', phraseCtrl);
+	}
 
 Inject the service/object $scope into your controller: 
 	Should look like this: 
@@ -64,7 +69,7 @@ In ur P element in the html, add a directive that points to the phrase controlle
 
 Put a watcher on the var in the view by showing the randomPhrase var in the P element using string interpolation. Refresh to see: 
 	<div class="container" >
-		<p ng-controller="phraseController">This is my random phrase dude: {{randomPhrase}} </p>
+		<p ng-controller="phraseController">This is my random phrase dude: {{phrase}} </p>
 	</div>
 
 Bind an html element to a var in ur ng module:
@@ -96,6 +101,7 @@ Put the string interpolated reference to the new var/model/object 'handle' in th
 	After ur www.twiffer.com/: 
 	<h4>www.twiffer.com/ {{handle}} </h4>
 
+Use the $timeout service by:
 Back in the phraseController, add another service/object called $timeout and use it in the controller by passing it a function that changes the string content of the phraseController var to something else after two seconds: 
 	angularApp.controller('phraseController', ['$scope', '$timeout',  function('$scope', '$timeout' ) {
 		$timeout(function() {
@@ -215,9 +221,11 @@ Set up routing by:
 		<li><a href="#/">The WHY</a></li>
 		<li><a href="#/second">Second Page</a></li>
 
-	Go to / and /second and see if first show's up. 
+	If you haven't, put the ng-view directive into the html that you want to see the two new pages show in. maybe like: 
+		<div class="col-md-6" ng-view >
+		</div> 
 
-	You may want to divide up the page at this point to put the 1st and 2nd page stuff on the right side or something. 
+	Go to / and /second and see if first show's up. 
 
 Give a page a specific value by passing the URL a value using pattern matching: 
 	In ur config method where ur doing ur routing, create a third route but add :num to the end of the /second url: 
@@ -267,17 +275,17 @@ Create a custom directive by converting the bootstrap search results html above 
 	 	In ur js file, attach a directive to the angularApp called 'searchResult' and give it a function that returns an object (the directive), with a template property (This is the html from the first page and that is the html that gets outputted when this directive is used). 
 		angularApp.directive('searchResult', function() {
 			return {
-				template: '<a href="#" class="list-group-item "><h4 class="list-group-item-heading">Frankie Siddys</h4><p class="list-group-item-text">222 Main St., New York, NY 22222 </p></a>'
+				template: '<a href="" class="list-group-item "><h4 class="list-group-item-heading">Frankie Siddys</h4><p class="list-group-item-text">222 Main St., New York, NY 22222 </p></a>'
 			}
 		});
 	 	Now get rid of the original 'search results' html in the first view and replace with your new directive normalizing the camelcase name of it to dashes. 
 	 	  <search-result></search-result>
 	 		Rf and should see results.
 	 		
-	 		Add a 2nd or 3rd to the first one and try using a different formate like: 
+	 		Add a 2nd or 3rd to the first one and try using a different format like: 
 			<search-result></search-result>
+			or
 			<div search-result ></div>			  
-			<search-result></search-result>
 
 	 		Add the 'replace:true' property on ur directive's object, rf and rendered html should be just the directive's html and u shouldn't see the angular <search-result> element anymore in the pages loaded html if you check in inspect element. 
  
@@ -286,7 +294,7 @@ Modularize your directive html code by putting it into a file in a folder and re
 	In that folder create a file called searchresult.html
 	Take the html contents from your custom 'searchResults' directive and put them into this new html file. 
 	In the object of the searchResult template, reference the new html in the new place by changing the template key to templateURL and make it's value the path to the new file like: 
-		templateURL: 'directives/search_result.html'
+		templateURL: 'directives/searchresult.html'
 		rf & check.
 
 Modularize the use of models by putting a new model 'Person' with a name and address property, in the firstController cuz that's the one that you're connecting/using with your first.html template/view which is where ur using your new 'search-result' directive. 
