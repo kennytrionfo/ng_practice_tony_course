@@ -6,13 +6,16 @@ Bind an html element to it with a directive then,
 Show the object in the view 
 
 <!-- /////////////////////////========Twitter Project=======\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
-Create an html page with the UTF-8 charset metatag, a link element linking to ur minified bootstrap file or the CDN link and ur script elements to either a minified local file or a CDN link to anguar, jquery and ur js files in ur head element: 
+Create an html page with 
+	the UTF-8 charset metatag, 
+	a link element linking to ur minified bootstrap file or the CDN link and 
+	ur script elements to either a minified local file or a CDN link to anguar, jquery and ur js files in ur head element: 
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="../bower_components/dist/css/bootstrap-theme.min.css">
 		<script type="text/javascript" src="../bower_components/angular/angular.min.js"> </script> 
 		<script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"> </script>
-		<script type="text/javascript" src="script.js
+		<script type="text/javascript" src="script.js" ></script>
 	</head>
 
 Put in a Navbar:
