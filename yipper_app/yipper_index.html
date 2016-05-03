@@ -6,6 +6,7 @@
 	<meta charset="utf-8">
 	<!-- /////////////////////////========LINKS: Bootstrap, fontawesome etc=======\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
 	<link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<!-- /////////////////////////========SCRIPTS: JSfiles, Angular etc=======\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
 	<script type="text/javascript" src="../bower_components/angular/angular.min.js"> </script>
 	<script type="text/javascript" src="yipper_app.js"> </script>
@@ -27,12 +28,31 @@
 		</nav>
 	</header>
 
-	<div class="container " ng-controller="PhraseCtrl" >
+	<div class="container" ng-controller="PhraseCtrl" >
 		<div  >
 			<p >This is my random phrase: {{randomPhrase}} </p>
-			<label>What do you want your Yipper handle to be? </label>
+			<label>Type in what you want your Yipper handle to be: </label><br>
 			<input ng-model="handle"></input>
-			<h2 >Your Yipper handle will be: {{handle}} </h2>
+			<label ng-show="handle.length < characters"  >-The handle must be exacly 3 characters long. It is now only {{handle.length}}. </label>
+			<label ng-show="handle.length > characters"  >Your handle is {{handle.length}} characters long. It must be only 3. </label>
+			<label ng-show="handle.length == characters"  >Perfect. {{handle.length}} characters long. </label>
+<!-- 			<div class="row "  >
+				<div class="col-md-3 "  >
+					<p  ng-show="handle.length < characters"  >The handle must be 5 characters!</p>
+				</div>
+				<div class="col-md-3 "  >
+					<p ng-show="handle.length > characters"  >You have too many characters.</p>
+				</div>
+				<div class="col-md-6 "  >
+				</div>
+			</div> -->
+			<!-- <div ng-class="{'faded-text':handle.length < | > characters } " > -->
+<!-- ng-class="{'alert-warning':handle.length < characters, 'alert-danger':handle.length > characters } " -->
+				<h3  >Your Yipper handle will be: {{handle | lowercase}} </h2>
+<div ng-class="{ 'faded-text':handle.length < characters, 'faded-text2':handle.length > characters  } "  >
+				<p>the seal goes owe owe owe </p>
+				<p>I'm not gonna spend my life being a color. if you want to destroy my sweater sold this thread well I walk away wait its 2012 where's my harbor board from the movie back to the future I'm not interested in money. I just want to be wonderful.  Store@PitayaPlus.com Gravity, stay the hell away from me.   t.references :todo_list, index: true cdc2566b9ae544348db26cf659e0f313 the seal goes owe owe owe sorry I'm not home right now so leave a message and I'll call you back spider web center_canyon_admin@cerebro:pitayaplus_integrator.git the fish goes blub blub blub I'm not gonna spend my life being a color.   </p>
+			</div>
 		</div>
 	</div>
 

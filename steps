@@ -119,6 +119,8 @@ Filter the text in the output of the twitter handle to all be uppercase:
 			return $filter('uppercase')($scope.handle);
 		};
 	Then html should have {{ lowercasehandle() }} in it. 
+	Or you can just put the filter in the html w/o putting anything in the controller like: 
+				<h2 >Your Yipper handle will be: {{handle | lowercase}} </h2>
 
 Put a requirement on the handle, that it has to be exactly 5 characters: 
 	Add a new var to the scope called characters: 
