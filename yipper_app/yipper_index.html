@@ -16,7 +16,7 @@
 		<nav class="navbar navbar-default">
 			<div class="container">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="#">twittister</a>
+					<a class="navbar-brand" href="#">Yipper</a>
 				</div>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#">The WHY</a></li>
@@ -30,6 +30,9 @@
 	<div class="container " ng-controller="PhraseCtrl" >
 		<div  >
 			<p >This is my random phrase: {{randomPhrase}} </p>
+			<label>What do you want your Yipper handle to be? </label>
+			<input ng-model="handle"></input>
+			<h2 >Your Yipper handle will be: {{handle}} </h2>
 		</div>
 	</div>
 

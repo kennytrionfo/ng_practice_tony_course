@@ -69,7 +69,7 @@ In ur P element in the html, add a directive that points to the phrase controlle
 
 Put a watcher on the var in the view by showing the randomPhrase var in the P element using string interpolation. Refresh to see: 
 	<div class="container" >
-		<p ng-controller="phraseController">This is my random phrase dude: {{phrase}} </p>
+		<p ng-controller="PhraseCtrl">This is my random phrase dude: {{phrase}} </p>
 	</div>
 
 Bind an html element to a var in ur ng module:
