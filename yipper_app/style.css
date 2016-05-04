@@ -4,3 +4,24 @@
 .faded-text2 {
 	color: lightgray;
 }
+div label span {
+	color: red;
+}
+.default{
+    opacity: .30;
+}
+.fadeIn{
+    -webkit-transition: opacity 2s; /* For Safari 3.1 to 6.0 */
+    transition: opacity .5s;
+    opacity: 1;
+}
+.fadeOut{
+    -webkit-transition: opacity 2s; /* For Safari 3.1 to 6.0 */
+    transition: opacity .5s;
+    opacity: .30;
+}
+.fadeOut2{
+    -webkit-transition: opacity 2s;  /* For Safari 3.1 to 6.0 */
+    transition: opacity .5s;
+    opacity: .30;
+}

@@ -15,6 +15,13 @@
 
 		$scope.characters = 3; 
 
+    // $scope.hideStuff = function () {
+    // $scope.startFade = true;
+    // $timeout(function(){
+    //     $scope.hidden = true;
+    // 	}, 2000);
+    // };
+
 
 	}]);
 
