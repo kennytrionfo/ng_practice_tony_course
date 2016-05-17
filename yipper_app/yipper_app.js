@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 
-		var app = angular.module('yipperApp', ['ngResource']);
+		var app = angular.module('yipperApp', ['ngResource', 'ngRoute']);
 
 /////////////////////////========CONTROLLERS=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
 	app.controller('PhraseCtrl', ['$scope', '$timeout', '$resource',  function($scope, $timeout, $resource){
@@ -25,5 +25,21 @@
 		console.log($scope.book_info);
 	}]);
 
+	app.controller('FirstPageCtrl', ['$scope', function($scope){
+		
+	}])
+
+/////////////////////////========ROUTES=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	app.config(function($routeProvider){
+		$routeProvider
+			.when('/first', {
+				templateUrl: 'pages/first_page.html', 
+				controller: 'FirstPageCtrl'
+			})		
+			.when('/books', {
+				templateUrl: 'pages/books_table.html', 
+				controller: 'PhraseCtrl'
+			})
+	})
 
 })();

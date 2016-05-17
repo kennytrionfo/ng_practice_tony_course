@@ -204,21 +204,21 @@ Set up routing by:
 
 	Make the homepage into 2 sections by putting in some col-md-6's on the twinner.html? 
 
-	Now pass the $routeProvider function to the config method to connect two different URLs to two different controllers by useing the when method and passing in the url, a json object that has the key/value pairs of The templateUrl and the controller: 
+	Now pass the $routeProvider function to the config method to connect two different URLs to two different controllers by using the when method and passing in the url, a json object that has the key/value pairs of The templateUrl and the controller: 
 		angularApp.config(function($routeProvider) {
 			$routeProvider
 				.when('/',  {
 					templateUrl: 'pages/first.html', 
-					controller: 'firstController'
+					controller: 'FirstCtrl'
 				}) 
 				.when('/second', {
 					templateUrl: 'pages/second.html'
-					controller: 'secondController'
+					controller: 'SecondCtrl'
 				})
 		});
 
 	Create a second controller (or a first and a second if needed) for the second .when method to connect to: 
-		angularApp.controller('secondController', ['$scope', function ($scope) {
+		angularApp.controller('SecondCtrl', ['$scope', function ($scope) {
 	 
 		}]);
 
