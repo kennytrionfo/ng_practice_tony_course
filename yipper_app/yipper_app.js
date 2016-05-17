@@ -26,20 +26,32 @@
 	}]);
 
 	app.controller('FirstPageCtrl', ['$scope', function($scope){
-		
+
+	}])
+
+	app.controller('SecondPageCtrl', ['$scope', function($scope){
+
 	}])
 
 /////////////////////////========ROUTES=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
 	app.config(function($routeProvider){
 		$routeProvider
+			.when('/', {
+				templateUrl: 'pages/landing.html', 
+				controller: 'PhraseCtrl'
+			})	
 			.when('/first', {
 				templateUrl: 'pages/first_page.html', 
-				controller: 'FirstPageCtrl'
-			})		
+				controller: 'PhraseCtrl'
+			})			
 			.when('/books', {
 				templateUrl: 'pages/books_table.html', 
 				controller: 'PhraseCtrl'
 			})
-	})
+			.when('/first/:num', {
+				templateUrl: 'pages/first_page.html',
+				controller: 'PhraseCtrl'
+			});
+	});
 
 })();

@@ -150,7 +150,69 @@ Add a button that shows an alert when clicked using ng-click:
 			alert("Hey there!");
 		};	
 
-Display a list of items from a json object in another .json file using the ngResource service:
+Move the content of the index page to a new html page that's in the pages folder, create two more html pages for the first and second menus to point to, put ng-view on the index page that points to them and put in routing to route to it. 
+Set up routing by:
+	Add a folder called pages with something like landing.html for the html from the index page, a first.html page and a second.html page for the two menu items and put some html like "This is the first page" or something in them. 
+	Add the ng-route dependency to the app, to use to route urls to different pages:
+		In the html file add a script link to the angular router of choice (ie ng-route or ui-route etc), linking it either to a file with the downloaded file or to the website like: 
+		<script type="text/javascript" src="//code.angularjs.org/1.4.7/angular-route.min.js "></script>
+		or
+		<script type="text/javascript" src="../angular-route.min.js "></script>
+		or 
+		put it in bower folder using bower. 
+
+	Tell the app that ur going to use this module which will be a dependency, by putting the dependency into the dependencies in the app: 
+		In ur js file:
+		var angularApp = angular.module('twinnerApp', ['ngRoute ']);	
+
+	Use the .config method that ngRoute module provides and call it on the app and pass in the $routeProvider service? to the function: 
+		angularApp.config(function($routeProvider) {
+			
+		});
+
+	Beware here that you may get a cross-origin error if ur doing this in chrome like this: 
+	angular.js:12722Error: [$compile:tpload] http://errors.angularjs.org/1.4.9/$compile/tpload?p0=pages%2Flanding.html&p1=-1&p2=
+	You may want to switch to firefox to avoid. 
+
+	Now pass the $routeProvider function to the config method to connect the different URLs to the different controllers by using the when method and passing in the url, a json object that has the key/value pairs of The templateUrl and the controller: 
+		angularApp.config(function($routeProvider) {
+			$routeProvider
+				.when('/',  {
+					templateUrl: 'pages/landing.html', 
+					controller: 'PhraseCtrl'
+				}) 
+		});
+	
+	If you haven't, put the ng-view directive into the html that you want to see the two new pages show in. maybe like: 
+		<div class="col-md-6" ng-view >
+		</div> 
+	Rf and see. 
+	
+	Create a second controller (or a first and a second if needed) for the second .when method to connect to: 
+		angularApp.controller('SecondCtrl', ['$scope', function ($scope) {
+	 
+		}]);
+
+	Add the next two routes for first page and second page menu items by doing this: 
+				.when('/first', {
+					templateUrl: 'pages/first.html'
+					controller: 'SomeCtrl'
+				})
+
+	Add the '/' and the '/second' to the menu bar links in ur html for the nav in the header:
+		<li><a href="#/">The WHY</a></li>
+		<li><a href="#/second">Second Page</a></li>
+
+	Go to / and /second and see if first show's up. 
+
+Give a page a specific value by passing the URL a value using pattern matching: 
+	In ur config method where ur doing ur routing, create a third route but add :num to the end of the /second url: 
+		.when('/second/:num', {
+			templateUrl: 'pages/second.html',
+			controller: 'secondController'
+		});
+
+On the Table menu item, display a list of items from a json object in another .json file using the ngResource service:
 	Install ngResource module into bower file and/or references ngResource module cdn from html file like: 
 		<script type="text/javascript" src="../bower_components/angular-resource/angular-resource.min.js"> </script>
 	Insert Angular's ngResource module into your app so you can use the $resource service. Like: 
@@ -182,62 +244,6 @@ Display a list of items from a json object in another .json file using the ngRes
 				</tr>
 			</table>
 		</div>		
-
-Set up routing by:
-	Add a folder called pages with a first.html page and a second.html page in it and put some html like "This is the first page" in it or something. 
-	Add the ng-route dependency to the app, to use to route urls to different pages:
-		In the html file add a script link to the angular router of choice (ie ng-route or ui-route etc), linking it either to a file with the downloaded file or to the website like: 
-		<script type="text/javascript" src="//code.angularjs.org/1.4.7/angular-route.min.js "></script>
-		or
-		<script type="text/javascript" src="../angular-route.min.js "></script>
-		or 
-		put it in bower folder using bower. 
-
-	Tell the app that ur going to use this module which will be a dependency, by putting the dependency into the dependencies in the app: 
-		In ur js file:
-		var angularApp = angular.module('twinnerApp', ['ngRoute ']);	
-
-	Use the .config method that ngRoute module provides and call it on the app and pass in the $routeProvider service? to the function: 
-		angularApp.config(function($routeProvider) {
-			
-		});
-
-	Make the homepage into 2 sections by putting in some col-md-6's on the twinner.html? 
-
-	Now pass the $routeProvider function to the config method to connect two different URLs to two different controllers by using the when method and passing in the url, a json object that has the key/value pairs of The templateUrl and the controller: 
-		angularApp.config(function($routeProvider) {
-			$routeProvider
-				.when('/',  {
-					templateUrl: 'pages/first.html', 
-					controller: 'FirstCtrl'
-				}) 
-				.when('/second', {
-					templateUrl: 'pages/second.html'
-					controller: 'SecondCtrl'
-				})
-		});
-
-	Create a second controller (or a first and a second if needed) for the second .when method to connect to: 
-		angularApp.controller('SecondCtrl', ['$scope', function ($scope) {
-	 
-		}]);
-
-	Add the '/' and the '/second' to the menu bar links in ur html for the nav in the header:
-		<li><a href="#/">The WHY</a></li>
-		<li><a href="#/second">Second Page</a></li>
-
-	If you haven't, put the ng-view directive into the html that you want to see the two new pages show in. maybe like: 
-		<div class="col-md-6" ng-view >
-		</div> 
-
-	Go to / and /second and see if first show's up. 
-
-Give a page a specific value by passing the URL a value using pattern matching: 
-	In ur config method where ur doing ur routing, create a third route but add :num to the end of the /second url: 
-		.when('/second/:num', {
-			templateUrl: 'pages/second.html',
-			controller: 'secondController'
-		});
 
 	Then inject the $routeParams service, that ng-route module gives us, into the secondController controller: 
 		First line should look like: 

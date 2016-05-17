@@ -19,7 +19,7 @@
 		<nav class="navbar navbar-default">
 			<div class="container">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="#">Yipper</a>
+					<a class="navbar-brand" href="#/">Yipper</a>
 				</div>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#/first">First Page</a></li>
@@ -30,57 +30,7 @@
 		</nav>
 	</header>
 
-	<div class="container" ng-controller="PhraseCtrl" >
-		<div>
-			<p >This is my random phrase: {{randomPhrase}} </p>
-			<label>Type in what you want your Yipper handle to be: </label><br>
-			<input ng-model="handle"></input>
-
-			<h3  >Your Yipper handle will be: {{handle | uppercase}} </h2>
-			<div >
-				<p>the seal goes owe owe owe </p>
-				<p>I'm not gonna spend my life being a color. if you want to destroy my sweater sold this thread well I walk away wait its 2012 where's my harbor board from the movie back to the future I'm not interested in money. I just want to be wonderful.  Store@PitayaPlus.com Gravity, stay the hell away from me.   t.references :todo_list, index: true cdc2566b9ae544348db26cf659e0f313 the seal goes owe owe owe sorry I'm not home right now so leave a message and I'll call you back spider web center_canyon_admin@cerebro:pitayaplus_integrator.git the fish goes blub blub blub I'm not gonna spend my life being a color.  </p>
-			</div>
-			<hr>
-		</div>
-		<div class="col-md-6 "  style="background: lightgreen" >
-			<table>
-				<tr>
-					<th>Titles:</th>
-					<th>Pages:</th>
-				</tr>
-				<tr>
-					<td>
-						<li>first thing</li>
-						<li>what now thing</li>
-					</td>
-					<td>
-						<li>second thing</li>
-						<li>huh? thing</li>
-					</td>
-				</tr>
-			</table>
-		</div>
-		<div>
-			<hr>  
-			<label>Please put in a password: </label><br>
-			<input ng-model="password" ></input>
-			<label ng-show="password.length < characters" 	ng-class="{'alert-warning':password.length < characters }"  ><span>Password must be 3 characters. It is 	now only {{password.length}}.</span> </label>
-			<label ng-show="password.length > characters" 	ng-class="{'alert-danger':password.length > characters }"  ><span>password is  {{password.length}}  			characters! It must be only 3. </span></label>
-			<label ng-show="password.length == characters"  >Perfect. {{password.length}} characters long. </label>
-			
-			<div class="default" ng-class="{fadeIn: password.length === characters, fadeOut: password.length > characters, fadeOut2: password.length < characters }">
-				<h3>Next Section</h3>
-				<p>Please fill in the seal goes owe owe owe </p>
-				<p>I'm not gonna spend my life being a color. if you want to destroy my sweater sold this thread well I walk away wait its 2012 where's my harbor board from the movie back to the future I'm not interested in money. I just want to be wonderful.  Store@PitayaPlus.com Gravity, stay the hell away from me.   t.references :todo_list, index: true cdc2566b9ae544348db26cf659e0f313 the seal goes owe owe owe sorry I'm not home right now so leave a message and I'll call you back spider web center_canyon_admin@cerebro:pitayaplus_integrator.git the fish goes blub blub blub I'm not gonna spend my life being a color.  </p>
-				<button type="button"  ng-click="alertClick()">Click me</button>
-				<p></p>
-				<p>if you want to destroy my sweater sold this thread well I walk away wait its 2012 where's my harbor board from the movie back to the future I'm not interested in money. I just want to be wonderful.  Store@PitayaPlus.com Gravity, stay the hell away from me.   t.references :todo_list, index: true cdc2566b9ae544348db26cf659e0f313 the seal goes owe owe owe sorry I'm not home right now so leave a message and I'll call you back spider web center_canyon_admin@cerebro:pitayaplus_integrator.git the fish goes blub blub blub I'm not gonna spend my life being a color.  </p>
-				<p>if you want to destroy my sweater sold this thread well I walk away wait its 2012 where's my harbor board from the movie back to the future I'm not interested in money. I just want to be wonderful.  Store@PitayaPlus.com Gravity, stay the hell away from me.   t.references :todo_list, index: true cdc2566b9ae544348db26cf659e0f313 the seal goes owe owe owe sorry I'm not home right now so leave a message and I'll call you back spider web center_canyon_admin@cerebro:pitayaplus_integrator.git the fish goes blub blub blub I'm not gonna spend my life being a color.  </p>
-			</div>
-		</div>
-
-
+	<div class="col-md-6 " ng-view  >
 	</div>
 
 </body>
