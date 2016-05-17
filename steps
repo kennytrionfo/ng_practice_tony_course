@@ -153,10 +153,14 @@ Add a button that shows an alert when clicked using ng-click:
 Display a list of items from a json object in another .json file using the ngResource service:
 	Install ngResource module into bower file and/or references ngResource module cdn from html file like: 
 		<script type="text/javascript" src="../bower_components/angular-resource/angular-resource.min.js"> </script>
-	Insert $resource service into your controller:
-	Create a data.json file in the same directory with a json object in it with some data in it. 
+	Insert Angular's ngResource module into your app so you can use the $resource service. Like: 
+	var app = angular.module('yipperApp', ['ngResource']);
+	Insert ngResource module's service '$resource' into your controller like:
+	app.controller('PhraseCtrl', ['$scope', '$timeout', '$resource',  function($scope, $timeout, $resource){
+
+	Create a something.json file in the same directory with a json object in it with some data in it. 
 	Create a new property on ur scope in the controller that gives you access to the records in the json file.
-		$scope.fakeData = $resource('data.json').get().$promise.then(function(data){
+		$scope.fakeData = $resource('something.json').get().$promise.then(function(data){
 			$scope.names = data.records;
 			// console.log($scope.names );
 		})

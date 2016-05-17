@@ -1,10 +1,10 @@
 (function(){
 	'use strict';
 
-	var app = angular.module('yipperApp', []);
+		var app = angular.module('yipperApp', ['ngResource']);
 
 /////////////////////////========CONTROLLERS=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
-	app.controller('PhraseCtrl', ['$scope', '$timeout',  function($scope, $timeout){
+	app.controller('PhraseCtrl', ['$scope', '$timeout', '$resource',  function($scope, $timeout, $resource){
 		$scope.randomPhrase = "This life is more than just a read-through. ";
 		
 		$scope.handle = '';
@@ -15,14 +15,14 @@
 
 		$scope.characters = 3; 
 
-    // $scope.hideStuff = function () {
-    // $scope.startFade = true;
-    // $timeout(function(){
-    //     $scope.hidden = true;
-    // 	}, 2000);
-    // };
+		$scope.alertClick = function(){
+			alert("Hey there.");
+		};
 
-
+		$scope.fakeData = $resource('books_file.json').get().$promise.then(function(data){
+			$scope.book_info = data.books;
+		});
+		console.log($scope.book_info);
 	}]);
 
 
