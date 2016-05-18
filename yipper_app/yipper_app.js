@@ -4,7 +4,7 @@
 		var app = angular.module('yipperApp', ['ngResource', 'ngRoute']);
 
 /////////////////////////========CONTROLLERS=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
-	app.controller('PhraseCtrl', ['$scope', '$timeout', '$resource',  function($scope, $timeout, $resource){
+	app.controller('PhraseCtrl', ['$scope', '$timeout', '$resource', 'customService',  function($scope, $timeout, $resource, customService){
 		$scope.randomPhrase = "This life is more than just a read-through. ";
 		
 		$scope.handle = '';
@@ -23,15 +23,23 @@
 			$scope.book_info = data.books;
 		});
 		console.log($scope.book_info);
+
+		$scope.fizzy = customService.customServiceVar;
+
 	}]);
 
 	app.controller('FirstPageCtrl', ['$scope', '$routeParams', function($scope, $routeParams){
 		$scope.num = $routeParams.num || 'No value yet';
-	}])
+	}]);
 
 	app.controller('SecondPageCtrl', ['$scope', function($scope){
 
-	}])
+	}]);
+
+/////////////////////////========SERVICES=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	app.service('customService', function(){
+		this.customServiceVar = "I hate myself for lovin you."
+	})
 
 /////////////////////////========ROUTES=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
 	app.config(function($routeProvider){
