@@ -25,8 +25,8 @@
 		console.log($scope.book_info);
 	}]);
 
-	app.controller('FirstPageCtrl', ['$scope', function($scope){
-
+	app.controller('FirstPageCtrl', ['$scope', '$routeParams', function($scope, $routeParams){
+		$scope.num = $routeParams.num || 'No value yet';
 	}])
 
 	app.controller('SecondPageCtrl', ['$scope', function($scope){

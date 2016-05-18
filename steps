@@ -205,13 +205,6 @@ Set up routing by:
 
 	Go to / and /second and see if first show's up. 
 
-Give a page a specific value by passing the URL a value using pattern matching: 
-	In ur config method where ur doing ur routing, create a third route but add :num to the end of the /second url: 
-		.when('/second/:num', {
-			templateUrl: 'pages/second.html',
-			controller: 'secondController'
-		});
-
 On the Table menu item, display a list of items from a json object in another .json file using the ngResource service:
 	Install ngResource module into bower file and/or references ngResource module cdn from html file like: 
 		<script type="text/javascript" src="../bower_components/angular-resource/angular-resource.min.js"> </script>
@@ -245,6 +238,13 @@ On the Table menu item, display a list of items from a json object in another .j
 			</table>
 		</div>		
 
+	Give a page a specific value by passing the URL a value using pattern matching: 
+	In ur config method where ur doing ur routing, create a third route but add :num to the end of the /second url: 
+		.when('/second/:num', {
+			templateUrl: 'pages/second.html',
+			controller: 'secondController'
+		});
+
 	Then inject the $routeParams service, that ng-route module gives us, into the secondController controller: 
 		First line should look like: 
 		angularApp.controller('secondController',  ['$scope', '$timeout', '$routeParams', function ($scope, $timeout, $routeParams) {
@@ -256,6 +256,7 @@ On the Table menu item, display a list of items from a json object in another .j
 	Now go to your view and put in something that will show what ur passing into the url:
 		Like: 
 		<p>The Scope Value from the Url is: {{num}} </p>
+		rf and see
 
 Create a custom service called customService by 
 	calling the .service method on ur app and putting a variable in it that we can reference in our view: 
