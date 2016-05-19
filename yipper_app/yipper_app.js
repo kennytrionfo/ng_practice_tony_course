@@ -26,6 +26,11 @@
 
 		$scope.fizzy = customService.customServiceVar;
 
+		$scope.person = {
+			name: 'Peek-a-boo Pinkie',
+			address: '5 Simple Lane'
+		}
+		
 	}]);
 
 	app.controller('FirstPageCtrl', ['$scope', '$routeParams', function($scope, $routeParams){
@@ -36,10 +41,18 @@
 
 	}]);
 
+/////////////////////////========DIRECTIVES=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	app.directive('searchResult', function(){
+		return {
+			templateUrl: 'directives/name_and_address.html', 
+			replace: true
+		}
+	});
+
 /////////////////////////========SERVICES=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
 	app.service('customService', function(){
 		this.customServiceVar = "I hate myself for lovin you."
-	})
+	});
 
 /////////////////////////========ROUTES=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
 	app.config(function($routeProvider){
