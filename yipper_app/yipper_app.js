@@ -30,7 +30,7 @@
 			name: 'Peek-a-boo Pinkie',
 			address: '5 Simple Lane'
 		}
-		
+
 	}]);
 
 	app.controller('FirstPageCtrl', ['$scope', '$routeParams', function($scope, $routeParams){
@@ -45,7 +45,8 @@
 	app.directive('searchResult', function(){
 		return {
 			templateUrl: 'directives/name_and_address.html', 
-			replace: true
+			replace: true,
+			personName: "@"
 		}
 	});
 
