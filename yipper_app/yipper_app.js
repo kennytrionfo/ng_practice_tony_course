@@ -46,7 +46,10 @@
 		return {
 			templateUrl: 'directives/name_and_address.html', 
 			replace: true,
-			personName: "@"
+			scope: {
+				personName: "@", 
+				personAddress: "@"
+			}
 		}
 	});
 

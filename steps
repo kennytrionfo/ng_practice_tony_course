@@ -321,16 +321,18 @@ Modularize the use of models by putting a new model 'Person' with a name and add
 				<h4 class="list-group-item-heading">{{person.name}} </h4>
 				<p class="list-group-item-text">{{person.address}} </p>
 			</a>		
-Move the model from the controller to the diretive by isolating the scope in your directive so the model can't affect anything on it's parent page (or so the scope in the directive can't touch the scope in the controller):
-	Add the scope property with an empty js object to ur directive like: 
+
+Move the model from the controller to the diretive or in other words put up a wall in the directive by isolating the scope in your directive so a model in the directive is in it's own scope (not the controller's scope) and can't affect anything on it's parent template html page (or so the scope in the directive can't touch the scope in the controller):
+	Add the scope property to the directive's return object with an empty js object to ur directive like: 
 		scope: {
 
 		}
-	Poke holes in the wall of the scope by putting custom attributes on the html element for the custom directive: 
-		Create a key in the scope object with whatever name you want with the value of "@" to pass the person.name text through to the html like: 
-			personName: "@"
-		Put the normalized js object name with the interpolated model and property you want access to as a direcitve from the scope as an attribute of the element in the html you will be interpolating the model into like: 
-			person-name=" {{person.name}} "
+	Poke holes in the wall of this directive's scope by:
+	First putting a custom attribute (that tells the gives the directive access to the controller's scope and model by using an interpolated attribute from the scope on the directive) on the directive's html element in the parent template page like: 
+		person-name=" {{person.name}} "
+	Then tell the scope (that is private and is like a wall separating itself from the parent template's scope) in the directive to allow the html template page's directive's element person-name to poke through the local scope on the directive and go to the controller's scope and access the person object with: 
+		personName: "@"
+
 		In the search_result.html or whatever directive html partial ur using, change out the interpolated model from the exact model name and property like 'person.name' to the one normalized attribute name in the element we just changed like: 
 			<h4 class="list-group-item-heading"> {{personName}} </h4>
 
