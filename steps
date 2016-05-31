@@ -322,11 +322,15 @@ Modularize the use of models by putting a new model 'Person' with a name and add
 				<p class="list-group-item-text">{{person.address}} </p>
 			</a>		
 
-Move the model from the controller to the diretive or in other words put up a wall in the directive by isolating the scope in your directive so a model in the directive is in it's own scope (not the controller's scope) and can't affect anything on it's parent template html page (or so the scope in the directive can't touch the scope in the controller):
-	Add the scope property to the directive's return object with an empty js object to ur directive like: 
+Isolate the model/$scope that is currently in the controller (but the directive can reach cuz it it's in the html that is connected to the controller) by putting it directly in the directive by:
+Putting a wall up in the directive to give the directive it's own scope (so it's not reaching all the way through to the controller and getting it by:
+	Adding the scope property to the directive's return object with an empty js object to ur directive like: 
 		scope: {
 
 		}
+
+	rf the page that this model is showing on and there should be nothing there. 
+
 	Poke holes in the wall of this directive's scope by:
 	First putting a custom attribute (that tells the gives the directive access to the controller's scope and model by using an interpolated attribute from the scope on the directive) on the directive's html element in the parent template page like: 
 		person-name=" {{person.name}} "
@@ -348,7 +352,6 @@ Insert plain text into ur directive partial html using the transclude key/object
 			</a>
 	Add the transclude key/value pair to the directive options like: 
 		transclude: true 
-
 
 Refactor
 	Put in any comments that may be needed in the app. 
